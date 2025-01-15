@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('medidas', function (Blueprint $table) {
-            $table->id(); // ID único para cada medida protetiva
+             $table->id(); // ID único para cada medida protetiva
             $table->string('processo_sei', 50)->unique(); // Número único do processo SEI
             $table->string('medida_protetiva', 50)->unique(); // Número do processo da medida protetiva
             $table->unsignedBigInteger('id_assistida'); // Relacionamento com a tabela assistida
