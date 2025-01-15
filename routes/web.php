@@ -9,7 +9,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 // testing send email
 Route::get('/email', function(){
     Mail::raw('Essa é uma mensagem de teste.', function(Message $message){
