@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -32,3 +33,8 @@ Route::get('/conection', function(){
 Route::get('/teste', function () {
     echo "Testando o sistema";
 });
+
+
+// mostrando os dados das tabelas: assistidas e agressores
+Route::get('/listar-assistidas', [MainController::class, 'listarAssistidas']);
+Route::get('/listar-agressores', [MainController::class, 'listarAgressores']);
