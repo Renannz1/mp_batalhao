@@ -16,18 +16,20 @@ class AgressorFactory extends Factory
      */
     public function definition(): array
     {
+        $faker = \Faker\Factory::create('pt_BR');
+
         return [
-            'nome' => $this->faker->firstNameMale,
-            'idade' => $this->faker->numberBetween(18, 45),
-            'telefone' => $this->faker->phoneNumber,
-            'logradouro' => $this->faker->streetName,
-            'numero' => $this->faker->buildingNumber,
+            'nome' => $faker->firstNameMale,
+            'idade' => $faker->numberBetween(18, 45),
+            'telefone' => $faker->phoneNumber,
+            'logradouro' => $faker->streetName,
+            'numero' => $faker->buildingNumber,
             'quadra' => null,
             'bloco' => null,
             'apartamento' => null,
-            'bairro' => $this->faker->citySuffix,
-            'complemento' => $this->faker->secondaryAddress,
-            'municipio' => $this->faker->city,
+            'bairro' => $faker->citySuffix,
+            'complemento' => $faker->secondaryAddress,
+            'municipio' => $faker->city,
         ];
     }
 }
