@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             AssistidasSeeder::class,
-            AgressoresSeeder::class
+            AgressoresSeeder::class,
+            MedidasSeeder::class
         ]);
     }
 }
