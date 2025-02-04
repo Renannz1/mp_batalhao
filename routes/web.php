@@ -38,3 +38,4 @@ Route::get('/teste', function () {
 // mostrando os dados das tabelas: assistidas e agressores
 Route::get('/listar-assistidas', [MainController::class, 'listarAssistidas']);
 Route::get('/listar-agressores', [MainController::class, 'listarAgressores']);
+Route::get('/listar-medidas', [MainController::class, 'listarMedidas']);

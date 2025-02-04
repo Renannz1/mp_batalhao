@@ -18,4 +18,10 @@ class MainController extends Controller
         
         dd($agressores);
     }
+
+    public function listarMedidas(){
+        $medidas = DB::select('select * from medidas');
+    
+        dd($medidas);
+    }
 }
