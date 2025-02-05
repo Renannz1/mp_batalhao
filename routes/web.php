@@ -1,41 +1,34 @@
 <?php
 
+use App\Http\Controllers\AssistidaController;
 use App\Http\Controllers\MainController;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// testing send email
-Route::get('/email', function(){
-    Mail::raw('Essa é uma mensagem de teste.', function(Message $message){
-        $message->to('teste@gmail.com')
-        ->subject('Titulo do email')
-        ->from('mpbatalhao@gmail.com');
-    });
-    echo '<h1> Email enviado com sucesso </h1>';
-});
-
-// testing data base conection
-Route::get('/conection', function(){
-    try {
-        DB::connection()->getPdo();
-        echo "Banco de dados conectado -> " . DB::connection()->getDatabaseName();
-    } catch (\Exception $e) {
-        echo "Erro ao conectar ao banco de dados.";
-    }
-});
-
-Route::get('/teste', function () {
-    echo "Testando o sistema";
-});
+// // testing send email
+// Route::get('/email', function(){
+//     Mail::raw('Essa é uma mensagem de teste.', function(Message $message){
+//         $message->to('teste@gmail.com')
+//         ->subject('Titulo do email')
+//         ->from('mpbatalhao@gmail.com');
+//     });
+//     echo '<h1> Email enviado com sucesso </h1>';
+// });
 
 
-// mostrando os dados das tabelas: assistidas e agressores
-Route::get('/listar-assistidas', [MainController::class, 'listarAssistidas']);
-Route::get('/listar-agressores', [MainController::class, 'listarAgressores']);
-Route::get('/listar-medidas', [MainController::class, 'listarMedidas']);
+// ASSISTIDAS ROUTES
+Route::get('/assistidas', [AssistidaController::class, 'listarAssistidas'])->name('listar-assistidas');
+
+// rota que carrega a pagina com o formulario parao usuario preencher
+Route::get('/assistidas/nova-assistida', [AssistidaController::class, 'novaAssistida'])->name('nova-assistida');
+
+// rota que vai fazer a submissão do formulario
+Route::post('/assistidas/criar-assistida', [AssistidaController::class, 'criarAssistida'])->name('criar-assistida');
+
+Route::get('/assistidas/detalhar', [AssistidaController::class, 'detalharAssistida'])->name('detalhar-assistida');
+
+Route::get('/assistidas/editar', [AssistidaController::class, 'editarAssistida'])->name('editar-assistida');
+
+Route::get('/assistidas/excluir', [AssistidaController::class, 'excluirAssistida'])->name('excluir-assistida');
