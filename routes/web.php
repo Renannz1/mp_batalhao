@@ -7,28 +7,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
-// // testing send email
-// Route::get('/email', function(){
-//     Mail::raw('Essa é uma mensagem de teste.', function(Message $message){
-//         $message->to('teste@gmail.com')
-//         ->subject('Titulo do email')
-//         ->from('mpbatalhao@gmail.com');
-//     });
-//     echo '<h1> Email enviado com sucesso </h1>';
-// });
-
-
-// ASSISTIDAS ROUTES
-Route::get('/assistidas', [AssistidaController::class, 'listarAssistidas'])->name('listar-assistidas');
-
-// rota que carrega a pagina com o formulario parao usuario preencher
-Route::get('/assistidas/form-nova-assistida', [AssistidaController::class, 'formNovaAssistida'])->name('nova-assistida');
-
-// rota que vai fazer a submissão do formulario
-Route::post('/assistidas/criar-assistida', [AssistidaController::class, 'criarAssistida'])->name('criar-assistida');
-
-Route::get('/assistida/{id}', [AssistidaController::class, 'detalharAssistida'])->name('detalhar-assistida');
-
-Route::get('/assistidas/editar', [AssistidaController::class, 'editarAssistida'])->name('editar-assistida');
-
-Route::get('/assistidas/excluir', [AssistidaController::class, 'excluirAssistida'])->name('excluir-assistida');
+Route::controller(AssistidaController::class)->group(function(){
+    Route::get('/assistidas', 'listarAssistidas')->name('listar-assistidas');
+    Route::get('/assistidas/form-nova-assistida', 'formNovaAssistida')->name('form-nova-assistida');
+    Route::post('/assistidas/criar-assistida', 'criarAssistida')->name('criar-assistida');
+    Route::get('/assistida/{id}', 'detalharAssistida')->name('detalhar-assistida');
+    Route::get('/assistida/form-editar-assistida/{id}', 'formEditarAssistida')->name('editar-assistida');
+    Route::put('/assistida/atualizar-assistida/{id}', 'atualizarAssistida')->name('atualizar-assistida');
+    Route::get('/assistidas/excluir', 'excluirAssistida')->name('excluir-assistida');
+});

@@ -16,7 +16,7 @@
                 <td>{{ $assistida->id }}</td>
                 <td>{{ $assistida->nome }}</td>
                 <td><button><a href="{{ route('detalhar-assistida', ['id' => $assistida->id]) }}">Detalhes</a></button></td>
-                <td><button><a href="{{ route('editar-assistida') }}">Editar</a></button></td>
+                <td><button><a href="{{ route('editar-assistida', ['id' => $assistida->id]) }}">Editar</a></button></td>
                 <td><button><a href="{{ route('excluir-assistida') }}">Excluir</a></button></td>
             </tr>
             @endforeach
@@ -24,6 +24,6 @@
     </table>
 </div>
 <div>
-    <br><button><a href="{{ route('nova-assistida') }}">Adicionar Assistida</a></button>
+    <br><button><a href="{{ route('form-nova-assistida') }}">Adicionar Assistida</a></button>
 </div>
 

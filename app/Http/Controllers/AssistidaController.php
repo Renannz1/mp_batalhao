@@ -20,7 +20,6 @@ class AssistidaController extends Controller
 
     // funcao que vai fazer a validacao e submissao dos dados 
     public function criarAssistida(Request $request){
-        // validacao do formulario
         $request->validate([
             'nome' => 'required|string',
             'idade' => 'nullable',
@@ -56,8 +55,52 @@ class AssistidaController extends Controller
         return view('assistida.detail_assistida', compact('assistida'));
     }
 
-    public function editarAssistida() : View {
-        return view('assistida.update_assistida');
+    public function formEditarAssistida(Request $request, $id) : View {
+        $assistida = Assistida::find($id);
+
+        if (!$assistida) {
+            return "Assistida não encontrada.";
+        }
+
+        return view('assistida.update_assistida', compact('assistida'));
+    }
+
+    public function atualizarAssistida(Request $request, $id){
+        $assistida = Assistida::find($id);
+
+        if (!$assistida) {
+            return "Ocorreu um erro ao tentar atualizar os dados. Id da assistida inválido.";
+        }
+
+        $request->validate([
+            'nome' => 'required|string',
+            'idade' => 'nullable',
+            // 'telefone' => 'nullable|unique:assistida',
+            'logradouro' => 'required',
+            // 'numero' => 'nullable',
+            // 'quadra' => 'nullable',
+            // 'bloco' => 'nullable',
+            // 'apartamento' => 'nullable',
+            'bairro' => 'required',
+            // 'complemento' => 'nullable',
+            'municipio' => 'required',
+        ]);
+
+        $assistida->update([
+            'nome' => $request->input('nome'),
+            'idade' => $request->input('idade'),
+            // 'telefone' => $request->input('telefone'),
+            'logradouro' => $request->input('logradouro'),
+            // 'numero' => $request->input('numero'),
+            // 'quadra' => $request->input('quadra'),
+            // 'bloco' => $request->input('bloco'),
+            // 'apartamento' => $request->input('apartamento'),
+            'bairro' => $request->input('bairro'),
+            // 'complemento' => $request->input('complemento'),
+            'municipio' => $request->input('municipio'),
+        ]);
+
+        return redirect()->route('listar-assistidas');
     }
 
     public function excluirAssistida() : View {
