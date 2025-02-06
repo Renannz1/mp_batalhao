@@ -22,12 +22,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/assistidas', [AssistidaController::class, 'listarAssistidas'])->name('listar-assistidas');
 
 // rota que carrega a pagina com o formulario parao usuario preencher
-Route::get('/assistidas/nova-assistida', [AssistidaController::class, 'novaAssistida'])->name('nova-assistida');
+Route::get('/assistidas/form-nova-assistida', [AssistidaController::class, 'formNovaAssistida'])->name('nova-assistida');
 
 // rota que vai fazer a submissão do formulario
 Route::post('/assistidas/criar-assistida', [AssistidaController::class, 'criarAssistida'])->name('criar-assistida');
 
-Route::get('/assistidas/detalhar', [AssistidaController::class, 'detalharAssistida'])->name('detalhar-assistida');
+Route::get('/assistida/{id}', [AssistidaController::class, 'detalharAssistida'])->name('detalhar-assistida');
 
 Route::get('/assistidas/editar', [AssistidaController::class, 'editarAssistida'])->name('editar-assistida');
 

@@ -15,7 +15,7 @@
             <tr>
                 <td>{{ $assistida->id }}</td>
                 <td>{{ $assistida->nome }}</td>
-                <td><button><a href="{{ route('detalhar-assistida') }}">Detalhes</a></button></td>
+                <td><button><a href="{{ route('detalhar-assistida', ['id' => $assistida->id]) }}">Detalhes</a></button></td>
                 <td><button><a href="{{ route('editar-assistida') }}">Editar</a></button></td>
                 <td><button><a href="{{ route('excluir-assistida') }}">Excluir</a></button></td>
             </tr>
@@ -24,7 +24,6 @@
     </table>
 </div>
 <div>
-    <br><br>
-    <button><a href="{{ route('nova-assistida') }}">Adicionar Assistida</a></button>
+    <br><button><a href="{{ route('nova-assistida') }}">Adicionar Assistida</a></button>
 </div>
 
