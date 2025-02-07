@@ -8,14 +8,14 @@
         <h3>Dados da Assistida</h3> 
 
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" required>
+        <input type="text" name="nome" id="nome" value="{{ old('nome') }}" required>
         @error('nome')
             <div>{{ $message }}</div>
          @enderror
         <br><br>
 
         <label for="idade">Idade</label>
-        <input type="text" name="idade" id="idade">
+        <input type="text" name="idade" id="idade" value="{{ old('idade') }}">
         @error('idade')
             <div>{{ $message }}</div>
          @enderror
@@ -26,21 +26,21 @@
         <h3>Endereço da Assistida</h3>
 
         <label for="logradouro">Logradouro</label>
-        <input type="text" name="logradouro" id="logradouro" required>
+        <input type="text" name="logradouro" id="logradouro" value="{{ old('logradouro') }}" required>
         @error('logradouro')
             <div>{{ $message }}</div>
          @enderror
         <br><br>
 
         <label for="bairro">Bairro</label>
-        <input type="text" name="bairro" id="bairro" required>
+        <input type="text" name="bairro" id="bairro" value="{{ old('bairro') }}" required>
         @error('bairro')
             <div>{{ $message }}</div>
          @enderror
         <br><br>
 
         <label for="municipio">Município</label>
-        <input type="text" name="municipio" id="municipio" required>
+        <input type="text" name="municipio" id="municipio" value="{{ old('municipio') }}" required>
         @error('municipio')
             <div>{{ $message }}</div>
          @enderror
