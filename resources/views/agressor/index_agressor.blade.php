@@ -24,6 +24,6 @@
     </table>
 </div>
 <div>
-    <br><button><a href="">Adicionar agressor</a></button>
+    <br><button><a href="{{ route('form-novo-agressor') }}">Adicionar agressor</a></button>
 </div>
 
