@@ -24,7 +24,9 @@ Route::controller(AgressorController::class)->group(function(){
     Route::get('/agressor/form-novo-agressor', 'formNovoAgressor')->name('form-novo-agressor');
     Route::post('/agressor/criar-agressor', 'criarAgressor')->name('criar-agressor');
     Route::get('/agressor/{id}', 'detalharAgressor')->name('detalhar-agressor');
-
     Route::get('/agressor/form-editar-agressor/{id}', 'formEditarAgressor')->name('form-editar-agressor');
     Route::put('/agressor/atualizar-agressor/{id}', 'atualizarAgressor')->name('atualizar-agressor');
+
+    Route::get('/agressor/excluir/{id}', 'excluirAgressor')->name('excluir-agressor');
+    Route::get('/agressor/confirm-excluir/{id}', 'confirmExcluirAgressor')->name('confirm-excluir-agressor');
 });

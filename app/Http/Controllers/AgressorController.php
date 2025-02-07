@@ -73,4 +73,26 @@ class AgressorController extends Controller
 
         return redirect()->route('listar-agressores');
     }
+
+    public function excluirAgressor($agressor_id){
+        $agressor = Agressor::find($agressor_id);
+
+        if (!$agressor) {
+            return "Agressor não encontrado.";
+        }
+
+        return view('agressor.delete_agressor', compact('agressor'));
+    }
+
+    public function confirmExcluirAgressor($agressor_id){
+        $agressor = Agressor::find($agressor_id);
+
+        if (!$agressor) {
+            return "Agressor não encontrado.";
+        }
+
+        $agressor->delete();
+
+        return redirect()->route('listar-agressores');
+    }
 }

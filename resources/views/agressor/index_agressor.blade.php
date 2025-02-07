@@ -17,7 +17,7 @@
                 <td>{{ $agressor->nome }}</td>
                 <td><button><a href="{{ route('detalhar-agressor', ['id' => $agressor->id]) }}">Detalhes</a></button></td>
                 <td><button><a href="{{ route('form-editar-agressor', ['id' => $agressor->id]) }}">Editar</a></button></td>
-                <td><button><a href="">Excluir</a></button></td>
+                <td><button><a href="{{ route('excluir-agressor', ['id' => $agressor->id]) }}">Excluir</a></button></td>
             </tr>
             @endforeach
         </tbody>
