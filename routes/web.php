@@ -21,4 +21,5 @@ Route::controller(AssistidaController::class)->group(function(){
 
 Route::controller(AgressorController::class)->group(function(){
     Route::get('/agressores', 'listarAgressores')->name('listar-agressores');
+    Route::get('/agressor/{id}', 'detalharAgressor')->name('detalhar-agressor');
 });
