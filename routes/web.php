@@ -14,5 +14,6 @@ Route::controller(AssistidaController::class)->group(function(){
     Route::get('/assistida/{id}', 'detalharAssistida')->name('detalhar-assistida');
     Route::get('/assistida/form-editar-assistida/{id}', 'formEditarAssistida')->name('editar-assistida');
     Route::put('/assistida/atualizar-assistida/{id}', 'atualizarAssistida')->name('atualizar-assistida');
-    Route::get('/assistidas/excluir', 'excluirAssistida')->name('excluir-assistida');
+    Route::get('/assistidas/excluir/{id}', 'excluirAssistida')->name('excluir-assistida');
+    Route::get('/assistidas/confirm-excluir/{id}', 'confirmExcluirAssistida')->name('confirm-excluir-assistida');
 });

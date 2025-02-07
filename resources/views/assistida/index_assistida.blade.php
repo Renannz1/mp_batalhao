@@ -17,7 +17,7 @@
                 <td>{{ $assistida->nome }}</td>
                 <td><button><a href="{{ route('detalhar-assistida', ['id' => $assistida->id]) }}">Detalhes</a></button></td>
                 <td><button><a href="{{ route('editar-assistida', ['id' => $assistida->id]) }}">Editar</a></button></td>
-                <td><button><a href="{{ route('excluir-assistida') }}">Excluir</a></button></td>
+                <td><button><a href="{{ route('excluir-assistida', ['id' =>$assistida->id]) }}">Excluir</a></button></td>
             </tr>
             @endforeach
         </tbody>

@@ -4,7 +4,7 @@
     </div>
     <div>
         <ul>
-            <li>Nome: {{ $assistida->name }}</li>
+            <li>Nome: {{ $assistida->nome }}</li>
             <li>Idade: {{ $assistida->idade }}</li>
             <li>Bairro: {{ $assistida->bairro }}</li>
             <li>Municipio: {{ $assistida->municipio }}</li>

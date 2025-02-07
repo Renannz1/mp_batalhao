@@ -103,8 +103,26 @@ class AssistidaController extends Controller
         return redirect()->route('listar-assistidas');
     }
 
-    public function excluirAssistida() : View {
-        return view('assistida.delete_assistida');
+    public function excluirAssistida($id){
+        $assistida = Assistida::find($id);
+
+        if (!$assistida) {
+            return "Assistida não encontrada.";
+        }
+
+        return view('assistida.delete_assistida', compact('assistida'));
+    }
+
+    public function confirmExcluirAssistida($id){
+        $assistida = Assistida::find($id);
+
+        if (!$assistida) {
+            return "Assistida não encontrada.";
+        }
+
+        $assistida->delete();
+
+        return redirect()->route('listar-assistidas');
     }
 
 }
