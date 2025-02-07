@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgressorController;
 use App\Http\Controllers\AssistidaController;
 use App\Http\Controllers\MainController;
 use Illuminate\Mail\Message;
@@ -16,4 +17,8 @@ Route::controller(AssistidaController::class)->group(function(){
     Route::put('/assistida/atualizar-assistida/{id}', 'atualizarAssistida')->name('atualizar-assistida');
     Route::get('/assistidas/excluir/{id}', 'excluirAssistida')->name('excluir-assistida');
     Route::get('/assistidas/confirm-excluir/{id}', 'confirmExcluirAssistida')->name('confirm-excluir-assistida');
+});
+
+Route::controller(AgressorController::class)->group(function(){
+    Route::get('/agressores', 'listarAgressores')->name('listar-agressores');
 });
