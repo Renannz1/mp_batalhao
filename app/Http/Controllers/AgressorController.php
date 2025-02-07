@@ -45,4 +45,32 @@ class AgressorController extends Controller
 
         return view('agressor.detail_agressor', compact('agressor'));
     }
+
+    public function formEditarAgressor($agressor_id){
+        $agressor = Agressor::find($agressor_id);
+
+        if (!$agressor) {
+            return "Agressor não encontrado.";
+        }
+
+        return view('agressor.update_agressor', compact('agressor'));
+    }
+
+    public function atualizarAgressor(Request $request, $agressor_id){
+        $agressor = Agressor::find($agressor_id);
+
+        if (!$agressor) {
+            return "Agressor não encontrado.";
+        }
+
+        $agressor->update([
+            'nome' => $request->input('nome'),
+            'idade' => $request->input('idade'),
+            'logradouro' => $request->input('logradouro'),
+            'bairro' => $request->input('bairro'),
+            'municipio' => $request->input('municipio'),
+        ]);
+
+        return redirect()->route('listar-agressores');
+    }
 }
