@@ -11,4 +11,9 @@ class medidaController extends Controller
         $medidas = Medida::all();
         return view('medida.index_medida', compact('medidas'));
     }
+
+    public function detalharMedida($medida_id){
+        $medida = Medida::find($medida_id);
+        return view('medida.detail_medida', compact('medida'));
+    }
 }

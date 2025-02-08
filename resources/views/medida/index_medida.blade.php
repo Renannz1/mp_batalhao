@@ -38,7 +38,9 @@
             {{-- <td>{{ $medida->previsao_termino }}</td>
             <td>{{ $medida->renovacao }}</td>
             <td>{{ $medida->revogacao }}</td> --}}
-            <td><button><a href="">Detalhar Medida</a></button></td>
+            <td><button><a href="{{ route('detalhar-medida', ['id' => $medida->id]) }}">
+                Detalhar Medida
+            </a></button></td>
             <td><button><a href="">Editar Medida</a></button></td>
             <td><button><a href="">Excluir Medida</a></button></td>
         </tr> 

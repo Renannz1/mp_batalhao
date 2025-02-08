@@ -33,4 +33,5 @@ Route::controller(AgressorController::class)->group(function(){
 
 Route::controller(medidaController::class)->group(function(){
     Route::get('/medidas', 'listarMedidas')->name('listar-medidas');
+    Route::get('/medida/{id}', 'detalharMedida')->name('detalhar-medida');
 });
