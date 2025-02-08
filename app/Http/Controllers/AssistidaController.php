@@ -14,7 +14,7 @@ class AssistidaController extends Controller
     }
 
     // funcao para mostrar a pagina com o formulario para criar uma nova assistida
-    public function formNovaAssistida() : View{
+    public function formNovaAssistida(){
         return view('assistida.add_assistida');
     }
 
@@ -45,7 +45,7 @@ class AssistidaController extends Controller
         return redirect()->route('listar-assistidas');
     }
 
-    public function detalharAssistida($assistida_id) : View{
+    public function detalharAssistida($assistida_id){
         $assistida = Assistida::find($assistida_id);
 
         if (!$assistida) {
@@ -55,7 +55,7 @@ class AssistidaController extends Controller
         return view('assistida.detail_assistida', compact('assistida'));
     }
 
-    public function formEditarAssistida(Request $request, $id) : View {
+    public function formEditarAssistida(Request $request, $id) {
         $assistida = Assistida::find($id);
 
         if (!$assistida) {

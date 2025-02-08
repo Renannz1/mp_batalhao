@@ -14,11 +14,11 @@ class Medida extends Model
     ];
 
     public function assistida(){
-        $this->belongsTo(Assistida::class);
+        return $this->belongsTo(Assistida::class);
     }
 
     public function agressor(){
-        $this->belongsTo(Agressor::class);
+        return $this->belongsTo(Agressor::class);
     }
 
 }
