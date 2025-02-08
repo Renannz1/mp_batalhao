@@ -7,4 +7,4 @@
     <li>Município: {{$agressor->municipio}}</li>
 </ul>
 
-<button><a href="{{ route('listar-agressores') }}">Voltar</a></button>
+<button><a href="{{ url()->previous() }}">Voltar</a></button>
