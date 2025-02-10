@@ -44,7 +44,9 @@
             <td><button><a href="{{ route('form-editar-medida', ['id' => $medida->id]) }}">
                 Editar Medida
             </a></button></td>
-            <td><button><a href="">Excluir Medida</a></button></td>
+            <td><button><a href="{{ route('form-excluir-medida', ['id' => $medida->id]) }}">
+                Excluir Medida
+            </a></button></td>
         </tr> 
         @endforeach
     </tbody>
