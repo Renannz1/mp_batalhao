@@ -35,9 +35,9 @@ Route::controller(AgressorController::class)->group(function(){
 
 Route::controller(medidaController::class)->group(function(){
     Route::get('/medidas', 'listarMedidas')->name('listar-medidas');
-
     Route::get('/medida/form-criar', 'formNovaMedida')->name('form-nova-medida');
     Route::post('/medida/criar', 'criarMedida')->name('criar-medida');
-
     Route::get('/medida/{id}', 'detalharMedida')->name('detalhar-medida');
+    Route::get('/medida/form-editar/{id}', 'formEditarMedida')->name('form-editar-medida');
+    Route::put('/medida/atualizar/{id}', 'atualizarMedida')->name('atualizar-medida');
 });
