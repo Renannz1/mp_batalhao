@@ -22,8 +22,10 @@ Route::controller(AssistidaController::class)->group(function(){
 
 Route::controller(AgressorController::class)->group(function(){
     Route::get('/agressores', 'listarAgressores')->name('listar-agressores');
+
     Route::get('/agressor/form-criar', 'formNovoAgressor')->name('form-novo-agressor');
     Route::post('/agressor/criar', 'criarAgressor')->name('criar-agressor');
+
     Route::get('/agressor/{id}', 'detalharAgressor')->name('detalhar-agressor');
     Route::get('/agressor/form-editar/{id}', 'formEditarAgressor')->name('form-editar-agressor');
     Route::put('/agressor/atualizar/{id}', 'atualizarAgressor')->name('atualizar-agressor');
@@ -33,5 +35,9 @@ Route::controller(AgressorController::class)->group(function(){
 
 Route::controller(medidaController::class)->group(function(){
     Route::get('/medidas', 'listarMedidas')->name('listar-medidas');
+
+    Route::get('/medida/form-criar', 'formNovaMedida')->name('form-nova-medida');
+    Route::post('/medida/criar', 'criarMedida')->name('criar-medida');
+
     Route::get('/medida/{id}', 'detalharMedida')->name('detalhar-medida');
 });

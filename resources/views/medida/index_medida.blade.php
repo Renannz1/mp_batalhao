@@ -49,5 +49,5 @@
 </table>
 
 <div>
-    <br><br><button><a href="">Adicionar Nova Medida</a></button>
+    <br><br><button><a href="{{ route('form-nova-medida') }}">Adicionar Nova Medida</a></button>
 </div>
