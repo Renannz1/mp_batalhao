@@ -47,6 +47,6 @@
         <script src="/sb-admin/assets/demo/chart-bar-demo.js"></script>
         <script src="/sb-admin/js/datatables-simple-demo.js"></script>
         <script src="/sb-admin/js/scripts.js"></script>
-
+        
     </body>
 </html>

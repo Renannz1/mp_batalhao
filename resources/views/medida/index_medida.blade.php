@@ -2,7 +2,11 @@
 
 @section('content')
 
-<h1>Lista de Medidas</h1><br>
+<h1>Lista de Medidas</h1>
+
+<div>
+    <button><a href="{{ route('form-nova-medida') }}">Adicionar Nova Medida</a></button>
+</div><br>
 
 <div class="card mb-4">
     <div class="card-header">
@@ -68,15 +72,13 @@
                     <td>{{ $medida->renovacao }}</td>
                     <td>{{ $medida->revogacao }}</td> --}}
                     <td>
-                        <button><a href="{{ route('detalhar-medida', ['id' => $medida->id]) }}">
-                        Detalhar Medida
-                        </a></button>
-                        <button><a href="{{ route('form-editar-medida', ['id' => $medida->id]) }}">
+                        <a href="{{ route('detalhar-medida', ['id' => $medida->id]) }}" class="btn btn-secondary btn-sm">Detalhar Medida</a>
+                        {{-- <button><a href="{{ route('form-editar-medida', ['id' => $medida->id]) }}">
                             Editar Medida
                         </a></button>
                         <button><a href="{{ route('form-excluir-medida', ['id' => $medida->id]) }}">
                             Excluir Medida
-                        </a></button>
+                        </a></button> --}}
                     </td>
                 </tr> 
                 @endforeach
@@ -85,9 +87,6 @@
     </div>
 </div>
 
-<div>
-    <br><br><button><a href="{{ route('form-nova-medida') }}">Adicionar Nova Medida</a></button>
-</div>
 @endsection
 
 

@@ -2,11 +2,7 @@
 
 use App\Http\Controllers\AgressorController;
 use App\Http\Controllers\AssistidaController;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\medidaController;
-use Illuminate\Mail\Message;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function(){

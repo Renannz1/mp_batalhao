@@ -124,5 +124,5 @@ class AssistidaController extends Controller
 
         return redirect()->route('listar-assistidas');
     }
-
+    
 }
