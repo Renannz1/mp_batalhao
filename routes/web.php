@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function(){
+    return view('layouts.index');
+});
+
 Route::controller(AssistidaController::class)->group(function(){
     Route::get('/assistidas', 'listarAssistidas')->name('listar-assistidas');
     Route::get('/assistidas/form-criar', 'formNovaAssistida')->name('form-nova-assistida');
