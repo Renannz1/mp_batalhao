@@ -48,9 +48,9 @@
                     <div class="flex-grow-1">
                         <select name="situacao" id="situacao" class="form-select">
                             <option value="">---</option>
-                            <option value="ativa" {{ old('situacao') == 'ativa' ? 'selected' : '' }}>Ativa</option>
-                            <option value="finalizada" {{ old('situacao') == 'finalizada' ? 'selected' : '' }}>Finalizada</option>
-                            <option value="inativa" {{ old('situacao') == 'inativa' ? 'selected' : '' }}>Inativa</option>
+                            <option value="Ativa" {{ old('situacao') == 'Ativa' ? 'selected' : '' }}>Ativa</option>
+                            <option value="Finalizada" {{ old('situacao') == 'Finalizada' ? 'selected' : '' }}>Finalizada</option>
+                            <option value="Inativa" {{ old('situacao') == 'Inativa' ? 'selected' : '' }}>Inativa</option>
                         </select>
                         @error('situacao') 
                             <div class="text-danger mt-1">{{ $message }}</div> 
@@ -63,9 +63,9 @@
                     <div class="flex-grow-1">
                         <select name="nivel_risco" id="nivel_risco" class='form-select'>
                             <option value="">---</option>
-                            <option value="baixo" {{ old('nivel_risco') == 'ativa' ? 'selected' : '' }}>Baixo</option>
-                            <option value="medio" {{ old('nivel_risco') == 'ativa' ? 'selected' : '' }}>Médio</option>
-                            <option value="inativa" {{ old('nivel_risco') == 'ativa' ? 'selected' : '' }}>Alto</option>
+                            <option value="Baixo" {{ old('nivel_risco') == 'Baixo' ? 'selected' : '' }}>Baixo</option>
+                            <option value="Médio" {{ old('nivel_risco') == 'Médio' ? 'selected' : '' }}>Médio</option>
+                            <option value="Inativo" {{ old('nivel_risco') == 'Inativo' ? 'selected' : '' }}>Alto</option>
                         </select>
                         @error('nivel_risco') 
                             <div class="text-danger mt-1">{{ $message }}</div> 
@@ -88,11 +88,11 @@
                     <div class="flex-grow-1">
                         <select name="relacao_vitima_agressor" id="relacao_vitima_agressor" class='form-select'>
                             <option value="">---</option>
-                            <option value="conjugue" {{ old('relacao_vitima_agressor') == 'conjugue' ? 'selected' : '' }}>Cônjuge</option>
-                            <option value="companheiro" {{ old('relacao_vitima_agressor') == 'companheiro' ? 'selected' : '' }}>Companheiro(a)</option>
-                            <option value="ex-conjugue" {{ old('relacao_vitima_agressor') == 'ex-conjugue' ? 'selected' : '' }}>Ex-cônjuge</option>
-                            <option value="ex-companheiro" {{ old('relacao_vitima_agressor') == 'ex-companheiro' ? 'selected' : '' }}>Ex-companheiro(a)</option>
-                            <option value="familiar" {{ old('relacao_vitima_agressor') == 'familiar' ? 'selected' : '' }}>Familiar</option>
+                            <option value="Cônjuge" {{ old('relacao_vitima_agressor') == 'Cônjuge' ? 'selected' : '' }}>Cônjuge</option>
+                            <option value="Companheiro" {{ old('relacao_vitima_agressor') == 'Companheiro' ? 'selected' : '' }}>Companheiro</option>
+                            <option value="Ex-cônjuge" {{ old('relacao_vitima_agressor') == 'Ex-cônjuge' ? 'selected' : '' }}>Ex-cônjuge</option>
+                            <option value="Ex-companheiro" {{ old('relacao_vitima_agressor') == 'Ex-companheiro' ? 'selected' : '' }}>Ex-companheiro</option>
+                            <option value="Familiar" {{ old('relacao_vitima_agressor') == 'Familiar' ? 'selected' : '' }}>Familiar</option>
                         </select>
                         @error('relacao_vitima_agressor') 
                             <div class="text-danger mt-1">{{ $message }}</div> 
