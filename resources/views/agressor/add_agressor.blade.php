@@ -1,3 +1,7 @@
+@extends('layouts.main_layout')
+
+@section('content')
+
 <h1>Novo Agressor</h1>
 
 <form action="{{ route('criar-agressor') }}" method="post">
@@ -51,3 +55,5 @@
         <button type="submit">Adicionar Novo Agressor</button>
     </div>
 </form>
+    
+@endsection

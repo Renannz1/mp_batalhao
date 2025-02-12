@@ -1,3 +1,6 @@
+@extends('layouts.main_layout')
+
+@section('content')
 <h1>Excluir Medida {{ $medida->medida_protetiva }}</h1>
 <h2></h2>
 
@@ -14,4 +17,7 @@
         <button><a href="{{ route('listar-medidas') }}">Cancelar</a></button>
         <button><a href="{{ route('excluir-medida', ['id' => $medida->id]) }}">Excluir</a></button>
     </div>
-</form>
+</form>  
+@endsection
+
+

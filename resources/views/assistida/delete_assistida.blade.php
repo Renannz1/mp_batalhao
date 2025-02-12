@@ -1,3 +1,7 @@
+@extends('layouts.main_layout')
+
+@section('content')
+
 <h1>Confirme a Exclusão</h1>
 <h3>Deseja realmente excluir a assistida: </h3>
 <ul>
@@ -7,5 +11,8 @@
 </ul>
 <button><a href="{{ route('listar-assistidas') }}">Cancelar</a></button>
 <button><a href="{{ route('confirm-excluir-assistida', ['id' => $assistida->id]) }}">Excluir</a></button>
+
+@endsection
+
 
 

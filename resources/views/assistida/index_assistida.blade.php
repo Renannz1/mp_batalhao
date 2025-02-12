@@ -1,6 +1,7 @@
+@extends('layouts.main_layout')
 
-
-
+@section('content')
+    
 <div>
     <h1>Listando os dados de todas Assistidas</h1>
     <table>
@@ -26,4 +27,8 @@
 <div>
     <br><button><a href="{{ route('form-nova-assistida') }}">Adicionar Assistida</a></button>
 </div>
+
+@endsection
+
+
 

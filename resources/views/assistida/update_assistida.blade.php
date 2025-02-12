@@ -1,3 +1,7 @@
+@extends('layouts.main_layout')
+
+@section('content')
+    
 <h1>Atualizano uma a Assistida</h1>
 
 <form action="{{ route('atualizar-assistida', $assistida->id) }}" method="post">
@@ -56,3 +60,5 @@
         <button type="submit">Salvar</button>
     </div>
 </form>
+
+@endsection

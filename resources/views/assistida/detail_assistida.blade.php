@@ -1,3 +1,7 @@
+@extends('layouts.main_layout')
+
+@section('content')
+
 <h1>Perfil</h1>
 
 <ul>
@@ -8,6 +12,9 @@
 </ul>
 
 <button><a href="{{ url()->previous() }}">Voltar</a></button>
+
+@endsection
+
 
 
 

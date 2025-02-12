@@ -1,3 +1,7 @@
+@extends('layouts.main_layout')
+
+@section('content')
+    
 <h1>Formulario Editar Medida</h1>
 
 <form action="{{ route('atualizar-medida', ['id' => $medida->id]) }}" method="post">
@@ -99,3 +103,5 @@
         <button type="submit">Salvar</button>
     </div>
 </form>
+
+@endsection
