@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\AgressorController;
 use App\Http\Controllers\AssistidaController;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\medidaController;
-use Illuminate\Mail\Message;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/', function(){
+    return view('layouts.index');
+});
 
 Route::controller(AssistidaController::class)->group(function(){
     Route::get('/assistidas', 'listarAssistidas')->name('listar-assistidas');
@@ -27,7 +27,6 @@ Route::controller(AgressorController::class)->group(function(){
     Route::get('/agressor/{id}', 'detalharAgressor')->name('detalhar-agressor');
     Route::get('/agressor/form-editar/{id}', 'formEditarAgressor')->name('form-editar-agressor');
     Route::put('/agressor/atualizar/{id}', 'atualizarAgressor')->name('atualizar-agressor');
-
     Route::get('/agressor/form-excluir/{id}', 'excluirAgressor')->name('excluir-agressor');
     Route::get('/agressor/excluir/{id}', 'confirmExcluirAgressor')->name('confirm-excluir-agressor');
 });
@@ -39,7 +38,6 @@ Route::controller(medidaController::class)->group(function(){
     Route::get('/medida/{id}', 'detalharMedida')->name('detalhar-medida');
     Route::get('/medida/form-editar/{id}', 'formEditarMedida')->name('form-editar-medida');
     Route::put('/medida/atualizar/{id}', 'atualizarMedida')->name('atualizar-medida');
-    
     Route::get('/medida/form-excluir/{id}', 'excluirMedida')->name('form-excluir-medida');
     Route::get('/medida/excluir/{id}', 'confirmExcluirMedida')->name('excluir-medida');
 });

@@ -1,3 +1,7 @@
+@extends('layouts.main_layout')
+
+@section('content')
+
 <h1>Adicionando uma nova Assistida</h1>
 
 <form action="{{ route('criar-assistida') }}" method="post">
@@ -54,3 +58,6 @@
         <button type="submit">Adicionar nova Assistida</button>
     </div>
 </form>
+
+@endsection
+

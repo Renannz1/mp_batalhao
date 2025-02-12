@@ -1,101 +1,171 @@
-<h1>Formulario Editar Medida</h1>
+@extends('layouts.main_layout')
 
-<form action="{{ route('atualizar-medida', ['id' => $medida->id]) }}" method="post">
+@section('content')
 
-    @csrf
+<div class="container mb-5 mt-4">
+    <h2 class="">Nova Medida Protetiva</h2>
+    <p class="mb-5">Formulário para cadastrar uma nova medida protetiva.</p>
 
-    @method('PUT')
+    <div class="card ">
+        <div class="card-body">
 
-    <div>
+            <form action="{{ route('atualizar-medida', ['id' => $medida->id]) }}" method="post">
 
-        <label for="processo_sei">processo_sei:</label>
-        <input type="text" name="processo_sei" id="processo_sei" value="{{ old('processo_sei', $medida->processo_sei) }}" required>
-        @error('processo_sei')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                @csrf
 
-        <label for="medida_protetiva">medida_protetiva:</label>
-        <input type="text" name="medida_protetiva" id="medida_protetiva" value="{{ old('medida_protetiva', $medida->medida_protetiva) }}"  required>
-        @error('medida_protetiva')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                @method('PUT')
 
-        <label for="assistida_id">assistida_id:</label>
-        <input type="number" name="assistida_id" id="assistida_id" value="{{ old('assistida_id', $medida->assistida_id) }}"  required>
-        @error('assistida_id')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="processo_sei" class="form-label me-2" style="width: 150px;">Processo SEI: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="processo_sei" id="processo_sei" value="{{ old('processo_sei', $medida->processo_sei) }}">
+                        @error('processo_sei') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
-        <label for="situacao">situacao:</label>
-        <input type="text" name="situacao" id="situacao" value="{{ old('situacao', $medida->situacao) }}" required>
-        @error('situacao')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="medida_protetiva" class="form-label me-2" style="width: 150px;">Medida Protetiva: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="medida_protetiva" id="medida_protetiva" value="{{ old('medida_protetiva', $medida->medida_protetiva) }}">
+                        @error('medida_protetiva') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div> 
+                
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="assistida_id" class="form-label me-2" style="width: 150px;">Id da Assistida: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="assistida_id" id="assistida_id" placeholder="Digite o id da assistida" value="{{ old('assistida_id', $medida->assistida_id) }}">
+                        @error('assistida_id') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
-        <label for="nivel_risco">nivel_risco:</label>
-        <input type="text" name="nivel_risco" id="nivel_risco" value="{{ old('nivel_risco', $medida->nivel_risco) }}" required>
-        @error('nivel_risco')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="situacao" class="form-label me-2" style="width: 150px;">Situação: </label>
+                    <div class="flex-grow-1">
+                        <select name="situacao" id="situacao" class="form-select">
+                            <option value="">---</option>
+                            <option value="Ativa" {{ old('situacao', $medida->situacao) == 'Ativa' ? 'selected' : '' }}>Ativa</option>
+                            <option value="Finalizada" {{ old('situacao', $medida->situacao) == 'Finalizada' ? 'selected' : '' }}>Finalizada</option>
+                            <option value="Inativa" {{ old('situacao', $medida->situacao) == 'Inativa' ? 'selected' : '' }}>Inativa</option>
+                        </select>
+                        @error('situacao') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
-        <label for="agressor_id">agressor_id:</label>
-        <input type="number" name="agressor_id" id="agressor_id" value="{{ old('agressor_id', $medida->agressor_id) }}" required>
-        @error('agressor_id')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="nivel_risco" class="form-label me-2" style="width: 150px;">Nível de risco: </label>
+                    <div class="flex-grow-1">
+                        <select name="nivel_risco" id="nivel_risco" class='form-select'>
+                            <option value="">---</option>
+                            <option value="Baixo" {{ old('nivel_risco', $medida->nivel_risco) == 'Baixo' ? 'selected' : '' }}>Baixo</option>
+                            <option value="Médio" {{ old('nivel_risco', $medida->nivel_risco) == 'Médio' ? 'selected' : '' }}>Médio</option>
+                            <option value="Inativo" {{ old('nivel_risco', $medida->nivel_risco) == 'Inativo' ? 'selected' : '' }}>Alto</option>
+                        </select>
+                        @error('nivel_risco') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div> 
 
-        <label for="relacao_vitima_agressor">relacao_vitima_agressor:</label>
-        <input type="text" name="relacao_vitima_agressor" id="relacao_vitima_agressor" value="{{ old('relacao_vitima_agressor', $medida->relacao_vitima_agressor) }}" required>
-        @error('relacao_vitima_agressor')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="agressor_id" class="form-label me-2" style="width: 150px;">Id do Agressor: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="agressor_id" id="agressor_id" placeholder="Digite o id do agressor" value="{{ old('agressor_id', $medida->agressor_id) }}">
+                        @error('agressor_id') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>  
 
-        <label for="restricoes_agressor">restricoes_agressor:</label>
-        <input type="text" name="restricoes_agressor" id="restricoes_agressor" value="{{ old('restricoes_agressor', $medida->restricoes_agressor) }}" required>
-        @error('restricoes_agressor')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="relacao_vitima_agressor" class="form-label me-2" style="width: 150px;">Relação Vítima/Agressor: </label>
+                    <div class="flex-grow-1">
+                        <select name="relacao_vitima_agressor" id="relacao_vitima_agressor" class='form-select'>
+                            <option value="">---</option>
+                            <option value="Cônjuge" {{ old('relacao_vitima_agressor', $medida->relacao_vitima_agressor) == 'Cônjuge' ? 'selected' : '' }}>Cônjuge</option>
+                            <option value="Companheiro" {{ old('relacao_vitima_agressor', $medida->relacao_vitima_agressor) == 'Companheiro' ? 'selected' : '' }}>Companheiro</option>
+                            <option value="Ex-cônjuge" {{ old('relacao_vitima_agressor', $medida->relacao_vitima_agressor) == 'Ex-cônjuge' ? 'selected' : '' }}>Ex-cônjuge</option>
+                            <option value="Ex-companheiro" {{ old('relacao_vitima_agressor', $medida->relacao_vitima_agressor) == 'Ex-companheiro' ? 'selected' : '' }}>Ex-companheiro</option>
+                            <option value="Familiar" {{ old('relacao_vitima_agressor', $medida->relacao_vitima_agressor) == 'Familiar' ? 'selected' : '' }}>Familiar</option>
+                        </select>
+                        @error('relacao_vitima_agressor') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div> 
 
-        <label for="inicio">inicio:</label>
-        <input type="text" name="inicio" id="inicio" value="{{ old('inicio', $medida->inicio) }}" required>
-        @error('inicio')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="restricoes_agressor" class="form-label me-2" style="width: 150px;">Restrições do Agressor: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="restricoes_agressor" id="restricoes_agressor" value="{{ old('restricoes_agressor', $medida->restricoes_agressor) }}">
+                        @error('restricoes_agressor') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
-        {{-- <label for="previsao_termino">previsao_termino:</label>
-        <input type="text" name="previsao_termino" id="previsao_termino" value="{{ old('previsao_termino', $medida->previsao_termino) }}"  required>
-        @error('previsao_termino')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
 
-        <label for="renovacao">renovacao:</label>
-        <input type="text" name="renovacao" id="renovacao" value="{{ old('renovacao', $medida->renovacao) }}"  required>
-        @error('renovacao')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br>
+                <hr class="mb-5 mt-5"> 
 
-        <label for="revogacao">revogacao:</label>
-        <input type="text" name="revogacao" id="revogacao" value="{{ old('revogacao', $medida->revogacao) }}"  required>
-        @error('revogacao')
-            <div>{{ $message }}</div>
-        @enderror
-        <br><br> --}}
 
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="inicio" class="form-label me-2" style="width: 150px;">Início: </label>
+                    <div class="flex-grow-1">
+                        <input type="date" class="form-control" name="inicio" id="inicio" value="{{ old('inicio', $medida->inicio) }}">
+                        @error('inicio') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="previsao_termino" class="form-label me-2" style="width: 150px;">Previsão término: </label>
+                    <div class="flex-grow-1">
+                        <input type="date" class="form-control" name="previsao_termino" id="previsao_termino" value="{{ old('previsao_termino', $medida->previsao_termino) }}">
+                        @error('previsao_termino') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="renovacao" class="form-label me-2" style="width: 150px;">Renovação: </label>
+                    <div class="flex-grow-1">
+                        <input type="date" class="form-control" name="renovacao" id="renovacao" value="{{ old('renovacao', $medida->renovacao) }}">
+                        @error('renovacao') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="revogacao" class="form-label me-2" style="width: 150px;">Revogação: </label>
+                    <div class="flex-grow-1">
+                        <input type="date" class="form-control" name="revogacao" id="revogacao" value="{{ old('revogacao', $medida->revogacao) }}">
+                        @error('revogacao') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
+
+                {{-- Botões de ação --}}
+                <div class="d-flex justify-content-end mt-4 gap-4">
+                    <a href="{{ route('listar-medidas') }}" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>                 
+                     
+            </form>
+
+        </div>
     </div>
-    {{-- Botoes de ação --}}
-    <div>
-        <button><a href="{{ route('listar-medidas') }}">Cancelar</a></button>
-        <button type="submit">Salvar</button>
-    </div>
-</form>
+</div>
+
+@endsection
