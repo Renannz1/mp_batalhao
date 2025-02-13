@@ -20,17 +20,29 @@ class AgressorController extends Controller
         $request->validate([
             'nome' => 'required|string',
             'idade' => 'nullable',
+            'telefone' => 'nullable|unique:agressores',
             'logradouro' => 'required',
+            'numero' => 'nullable',
+            'quadra' => 'nullable',
+            'bloco' => 'nullable',
+            'apartamento' => 'nullable',
             'bairro' => 'required',
-            'municipio' => 'required'
+            'complemento' => 'nullable',
+            'municipio' => 'required',
         ]);
 
         Agressor::create([
             'nome' => $request->nome,
             'idade' => $request->idade,
+            'telefone' => $request->telefone,
             'logradouro' => $request->logradouro,
-            'bairro' => $request->bairro,
-            'municipio' => $request->municipio,
+            'numero' => $request->numero, 
+            'quadra' => $request->quadra, 
+            'bloco' => $request->bloco, 
+            'apartamento' => $request->apartamento, 
+            'bairro' => $request->bairro, 
+            'complemento' => $request->complemento, 
+            'municipio' => $request->municipio, 
         ]);
 
         return redirect()->route('listar-agressores');
@@ -63,11 +75,31 @@ class AgressorController extends Controller
             return "Agressor não encontrado.";
         }
 
+        $request->validate([
+            'nome' => 'required|string',
+            'idade' => 'nullable',
+            'telefone' => 'nullable|unique:agressores',
+            'logradouro' => 'required',
+            'numero' => 'nullable',
+            'quadra' => 'nullable',
+            'bloco' => 'nullable',
+            'apartamento' => 'nullable',
+            'bairro' => 'required',
+            'complemento' => 'nullable',
+            'municipio' => 'required',
+        ]);
+
         $agressor->update([
             'nome' => $request->input('nome'),
             'idade' => $request->input('idade'),
+            'telefone' => $request->input('telefone'),
             'logradouro' => $request->input('logradouro'),
+            'numero' => $request->input('numero'),
+            'quadra' => $request->input('quadra'),
+            'bloco' => $request->input('bloco'),
+            'apartamento' => $request->input('apartamento'),
             'bairro' => $request->input('bairro'),
+            'complemento' => $request->input('complemento'),
             'municipio' => $request->input('municipio'),
         ]);
 
