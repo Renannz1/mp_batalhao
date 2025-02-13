@@ -58,16 +58,6 @@ class medidaController extends Controller
     public function excluirMedida($medida_id){
         $medida = Medida::find($medida_id);
 
-        if (!$medida) {
-            Return "medida não encontrada.";
-        }
-
-        return view('medida.delete_medida', compact('medida'));
-    }
-
-    public function confirmExcluirMedida($medida_id){
-        $medida = Medida::find($medida_id);
-
         if (!$medida_id) {
             return 'medida não encontrada';
         }

@@ -16,8 +16,7 @@ Route::controller(AssistidaController::class)->group(function(){
     Route::get('/assistida/{id}', 'detalharAssistida')->name('detalhar-assistida');
     Route::get('/assistida/form-editar/{id}', 'formEditarAssistida')->name('form-editar-assistida');
     Route::put('/assistida/atualizar/{id}', 'atualizarAssistida')->name('atualizar-assistida');
-    Route::get('/assistidas/form-excluir/{id}', 'excluirAssistida')->name('form-excluir-assistida');
-    Route::get('/assistidas/excluir/{id}', 'confirmExcluirAssistida')->name('excluir-assistida');
+    Route::get('/assistidas/excluir/{id}', 'excluirAssistida')->name('excluir-assistida');
 });
 
 Route::controller(AgressorController::class)->group(function(){
@@ -27,8 +26,7 @@ Route::controller(AgressorController::class)->group(function(){
     Route::get('/agressor/{id}', 'detalharAgressor')->name('detalhar-agressor');
     Route::get('/agressor/form-editar/{id}', 'formEditarAgressor')->name('form-editar-agressor');
     Route::put('/agressor/atualizar/{id}', 'atualizarAgressor')->name('atualizar-agressor');
-    Route::get('/agressor/form-excluir/{id}', 'excluirAgressor')->name('form-excluir-agressor');
-    Route::get('/agressor/excluir/{id}', 'confirmExcluirAgressor')->name('excluir-agressor');
+    Route::get('/agressor/excluir/{id}', 'excluirAgressor')->name('excluir-agressor');
 });
 
 Route::controller(medidaController::class)->group(function(){
@@ -38,6 +36,5 @@ Route::controller(medidaController::class)->group(function(){
     Route::get('/medida/{id}', 'detalharMedida')->name('detalhar-medida');
     Route::get('/medida/form-editar/{id}', 'formEditarMedida')->name('form-editar-medida');
     Route::put('/medida/atualizar/{id}', 'atualizarMedida')->name('atualizar-medida');
-    Route::get('/medida/form-excluir/{id}', 'excluirMedida')->name('form-excluir-medida');
-    Route::get('/medida/excluir/{id}', 'confirmExcluirMedida')->name('excluir-medida');
+    Route::get('/medida/excluir/{id}', 'excluirMedida')->name('excluir-medida');
 });
