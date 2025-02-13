@@ -15,7 +15,7 @@
         DataTable Example
     </div>
     <div class="card-body">
-        <table id="datatablesSimple">
+        <table id="datatablesSimple" class="text-center table table-bordered table-responsive">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -23,7 +23,7 @@
                     <th>Medida Protetiva</th>
                     <th>Assistida</th>
                     <th>Situação</th>
-                    <th>Nível de Risco</th>
+                    <th>Risco</th>
                     <th>Agressor</th>
                     <th>Relação VA</th>
                     <th>Restrições Agressor</th>
@@ -61,8 +61,26 @@
                     <td><a href="{{ route('detalhar-assistida', ['id' => $medida->assistida->id]) }}">
                         {{ $medida->assistida->nome }}
                     </a></td>
-                    <td>{{ $medida->situacao }}</td>
-                    <td>{{ $medida->nivel_risco }}</td>
+                    <td class="text-center">
+                        <span class="badge 
+                            @if($medida->situacao == 'Ativa') bg-success
+                            @elseif($medida->situacao == 'Revogada') bg-danger
+                            @elseif($medida->situacao == 'Pendente') bg-warning
+                            @else bg-secondary
+                            @endif">
+                            {{ $medida->situacao }}
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge 
+                            @if($medida->nivel_risco == 'Baixo') bg-success
+                            @elseif($medida->nivel_risco == 'Médio') bg-warning
+                            @elseif($medida->nivel_risco == 'Alto') bg-danger
+                            @else bg-secondary
+                            @endif">
+                            {{ $medida->nivel_risco }}
+                        </span>
+                    </td>
                     <td><a href="{{ route('detalhar-agressor', ['id' => $medida->agressor->id]) }}">
                         {{ $medida->agressor->nome }}
                     </a></td>
@@ -83,7 +101,3 @@
 </div>
 
 @endsection
-
-
-
-
