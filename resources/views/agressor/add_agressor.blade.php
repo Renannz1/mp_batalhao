@@ -2,58 +2,144 @@
 
 @section('content')
 
-<h1>Novo Agressor</h1>
+<div class="container mb-5 mt-4">
+    <h2 class="">Novo Agressor</h2>
+    <p class="mb-5">Formulário para cadastrar um novo agressor.</p>
 
-<form action="{{ route('criar-agressor') }}" method="post">
+    <div class="card ">
+        <div class="card-body">
 
-    @csrf
+            <form action="{{ route('criar-agressor') }}" method="post">
 
-    <div>
-        <h3>Dados do Agressor</h3>
+                @csrf
 
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome" id="nome" value="{{ old('nome') }}" required>
-        <br><br>
-        @error('nome')
-            <div>{{ $message }}</div>
-        @enderror
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="nome" class="form-label me-2" style="width: 150px;">Nome: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="nome" id="nome" value="{{ old('nome') }}">
+                        @error('nome') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
-        <label for="idade">Idade: </label>
-        <input type="text" name="idade" id="idade" value="{{ old('idade') }}">
-        <br><br>
-        @error('idade')
-            <div>{{ $message }}</div>
-        @enderror
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="idade" class="form-label me-2" style="width: 150px;">Idade: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="idade" id="idade" value="{{ old('idade') }}">
+                        @error('idade') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div> 
+                
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="telefone" class="form-label me-2" style="width: 150px;">Telefone: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="telefone" id="telefone" value="{{ old('telefone') }}">
+                        @error('telefone') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
+                <hr class="mb-5 mt-5"> 
 
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="logradouro" class="form-label me-2" style="width: 150px;">Logradouro: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="logradouro" id="logradouro" value="{{ old('logradouro') }}">
+                        @error('logradouro') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
-        <h3>Endereço do Agressor</h3>
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="numero" class="form-label me-2" style="width: 150px;">Número: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="numero" id="numero" value="{{ old('numero') }}">
+                        @error('numero') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
+                
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="quadra" class="form-label me-2" style="width: 150px;">Quadra: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="quadra" id="quadra" value="{{ old('quadra') }}">
+                        @error('quadra') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
-        <label for="logradouro">Logradouro: </label>
-        <input type="text" name="logradouro" id="logradouro" value="{{ old('logradouro') }}" required>
-        <br><br>
-        @error('logradouro')
-            <div>{{ $message }}</div>
-        @enderror
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="bloco" class="form-label me-2" style="width: 150px;">Bloco: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="bloco" id="bloco" value="{{ old('bloco') }}">
+                        @error('bloco') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
-        <label for="bairro">Bairro: </label>
-        <input type="text" name="bairro" id="bairro" value="{{ old('bairro') }}" required>
-        <br><br>
-        @error('bairro')
-            <div>{{ $message }}</div>
-        @enderror
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="apartamento" class="form-label me-2" style="width: 150px;">Apartamento: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="apartamento" id="apartamento" value="{{ old('apartamento') }}">
+                        @error('apartamento') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
 
-        <label for="municipio">Município: </label>
-        <input type="text" name="municipio" id="municipio" value="{{ old('municipio') }}" required>
-        <br><br>
-        @error('municipio')
-            <div>{{ $message }}</div>
-        @enderror
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="bairro" class="form-label me-2" style="width: 150px;">Bairro: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="bairro" id="bairro" value="{{ old('bairro') }}">
+                        @error('bairro') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="complemento" class="form-label me-2" style="width: 150px;">Complemento: </label>
+                    <div class="flex-grow-1">
+                        <input type="text" class="form-control" name="complemento" id="complemento" value="{{ old('complemento') }}">
+                        @error('complemento') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="mb-3 d-flex align-items-center">
+                    <label for="municipio" class="form-label me-2" style="width: 150px;">Munícipio: </label>
+                    <div class="flex-grow-1">
+                        <select name="municipio" id="municipio" class='form-select'>
+                            <option value="">---</option>
+                            <option value="Guanambi" {{ old('municipio') == 'Guanambi' ? 'selected' : '' }}>Guanambi</option>
+                            <option value="Candiba" {{ old('municipio') == 'Candiba' ? 'selected' : '' }}>Candiba</option>
+                            <option value="Cariranha" {{ old('municipio') == 'Cariranha' ? 'selected' : '' }}>Cariranha</option>
+                        </select>
+                        @error('municipio') 
+                            <div class="text-danger mt-1">{{ $message }}</div> 
+                        @enderror
+                    </div>
+                </div> 
+
+                {{-- Botões de ação --}}
+                <div class="d-flex justify-content-end mt-4 gap-4">
+                    <a href="{{ route('listar-agressores') }}" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Criar Agressor</button>
+                </div>                 
+                     
+            </form>
+
+        </div>
     </div>
-    <div>
-        <br><button><a href="{{ route('listar-agressores') }}">Cancelar</a></button>
-        <button type="submit">Adicionar Novo Agressor</button>
-    </div>
-</form>
-    
+</div>
+
 @endsection
