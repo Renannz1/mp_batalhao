@@ -52,7 +52,7 @@
           <p class="mb-0"><strong> Assistida </strong></p>
         </div>
         <div class="col-sm-9">
-          <a href="{{ route('detalhar-assistida', ['id' => $medida->assistida->id]) }}"  class=" mb-0">{{ $medida->assistida->nome }}</a>
+          <a href="{{ route('detalhar-assistida', ['id' => $medida->assistida->id]) }}"  class="mb-0 text-decoration-none text-dark">{{ $medida->assistida->nome }}</a>
         </div>
       </div>
 
@@ -85,7 +85,7 @@
           <p class="mb-0"><strong> Agressor </strong></p>
         </div>
         <div class="col-sm-9">
-          <a href="{{ route('detalhar-agressor', ['id' => $medida->agressor->id]) }}" class=" mb-0">{{ $medida->agressor->nome }}</a>
+          <a href="{{ route('detalhar-agressor', ['id' => $medida->agressor->id]) }}" class=" mb-0 text-decoration-none text-dark">{{ $medida->agressor->nome }}</a>
         </div>
       </div>
 

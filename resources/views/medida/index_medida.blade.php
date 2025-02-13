@@ -40,7 +40,7 @@
                     <td>{{ $medida->id }}</td>
                     <td>{{ $medida->processo_sei }}</td>
                     <td>{{ $medida->medida_protetiva }}</td>
-                    <td><a href="{{ route('detalhar-assistida', ['id' => $medida->assistida->id]) }}">
+                    <td><a href="{{ route('detalhar-assistida', ['id' => $medida->assistida->id]) }}" class="text-decoration-none text-dark">
                         {{ $medida->assistida->nome }}
                     </a></td>
                     <td class="text-center">
@@ -63,7 +63,7 @@
                             {{ $medida->nivel_risco }}
                         </span>
                     </td>
-                    <td><a href="{{ route('detalhar-agressor', ['id' => $medida->agressor->id]) }}">
+                    <td><a href="{{ route('detalhar-agressor', ['id' => $medida->agressor->id]) }}" class="text-decoration-none text-dark">
                         {{ $medida->agressor->nome }}
                     </a></td>
                     <td>{{ $medida->relacao_vitima_agressor }}</td>
