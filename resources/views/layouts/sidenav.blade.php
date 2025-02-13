@@ -3,94 +3,59 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 
-                {{-- título módulo CORE --}}
-                <div class="sb-sidenav-menu-heading">Core</div>
+                {{-- INICIO --}}
+                <div class="sb-sidenav-menu-heading">INÍCIO</div>
 
                 <a class="nav-link" href="index.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Dashboard
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+                    Tela Principal
                 </a>
 
 
-                {{-- título módulo INTERFACE --}}
-                <div class="sb-sidenav-menu-heading">Interface</div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                    <div class="    sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                    Cadastrar
+                {{-- TABEALAS --}}
+                <div class="sb-sidenav-menu-heading">TABELAS</div>
+
+                {{-- assistidas --}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAssistida" aria-expanded="false" aria-controls="collapseAssistida">
+                    <div class="sb-nav-link-icon"><i class="fas fa-user-shield"></i></div>
+                    Assistida
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
 
-                {{-- ..cadastrar --}}
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <div class="collapse" id="collapseAssistida" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        {{-- links cadastrar --}}
-                        <a class="nav-link" href="layout-static.html">Assistida</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Agressor</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Medida</a>
+                        <a class="nav-link" href="{{ route('listar-assistidas') }}">Todas Assistidas</a>
+                        <a class="nav-link" href="{{ route('form-nova-assistida') }}">Cadastrar Assistida</a>
                     </nav>
                 </div>
 
-                {{-- .pages --}}
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                    <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                    Pages
+                {{-- agressores --}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAgressor" aria-expanded="false" aria-controls="collapseAgressor">
+                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    Agressores
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
 
-                        {{-- ..page.assistida --}}
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAssistida" aria-expanded="false" aria-controls="pagesCollapseAssistida">
-                            Assistida
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseAssistida" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                {{-- links crud assistida --}}
-                                <a class="nav-link" href="{{ route ('listar-assistidas') }}">Assistidas Cadastradas</a>
-                                <a class="nav-link" href="{{ route ('form-nova-assistida') }}">Cadastrar nova Assistida</a>
-                            </nav>
-                        </div>
-
-                        {{-- ..page.Agressor --}}
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAgressor" aria-expanded="false" aria-controls="pagesCollapseAgressor">
-                            Agressor
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseAgressor" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                {{-- links crud Agressor --}}
-                                <a class="nav-link" href="{{ route ('listar-agressores') }}">Agressores Cadastrados</a>
-                                <a class="nav-link" href="{{ route ('form-novo-agressor') }}">Cadastrar novo Agressor</a>
-                            </nav>
-                        </div>
-
-                        {{-- ..pages.agressor --}}
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseMedida" aria-expanded="false" aria-controls="pagesCollapseMedida">
-                            Medida
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="pagesCollapseMedida" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route ('listar-medidas') }}">Medidas Cadastrados</a>
-                                <a class="nav-link" href="{{ route ('form-nova-medida') }}">Cadastrar nova Medida</a>
-                            </nav>
-                        </div>
+                <div class="collapse" id="collapseAgressor" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('listar-agressores') }}">Todos Agressores</a>
+                        <a class="nav-link" href="{{ route('form-novo-agressor') }}">Cadastrar Agressor</a>
                     </nav>
                 </div>
 
-                {{-- título módulo ADDONS --}}
-                {{-- <div class="sb-sidenav-menu-heading">Addons</div>
-
-                <a class="nav-link" href="charts.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                    Charts
+                {{-- medidas --}}
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMedida" aria-expanded="false" aria-controls="collapseMedida">
+                    <div class="sb-nav-link-icon"><i class="fas fa-shield"></i></div>
+                    Medidas
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <a class="nav-link" href="tables.html">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Tables
-                </a> --}}
 
+                <div class="collapse" id="collapseMedida" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ route('listar-medidas') }}">Todos Medidas</a>
+                        <a class="nav-link" href="{{ route('form-nova-medida') }}">Cadastrar Medida</a>
+                    </nav>
+                </div>
             </div>
         </div>
 
