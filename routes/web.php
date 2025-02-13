@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AgressorController;
 use App\Http\Controllers\AssistidaController;
-use App\Http\Controllers\medidaController;
+use App\Http\Controllers\MedidaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function(){
@@ -29,7 +29,7 @@ Route::controller(AgressorController::class)->group(function(){
     Route::get('/agressor/excluir/{id}', 'excluirAgressor')->name('excluir-agressor');
 });
 
-Route::controller(medidaController::class)->group(function(){
+Route::controller(MedidaController::class)->group(function(){
     Route::get('/medidas', 'listarMedidas')->name('listar-medidas');
     Route::get('/medida/form-criar', 'formNovaMedida')->name('form-nova-medida');
     Route::post('/medida/criar', 'criarMedida')->name('criar-medida');

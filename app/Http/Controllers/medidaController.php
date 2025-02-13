@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\MedidaRequest;
-use App\Models\Assistida;
 use App\Models\Medida;
 use Illuminate\Http\Request;
 
-class medidaController extends Controller
+class MedidaController extends Controller
 {
     public function listarMedidas(){
         $medidas = Medida::all();
