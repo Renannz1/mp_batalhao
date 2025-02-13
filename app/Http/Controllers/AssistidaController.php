@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AssistidaRequest;
 use App\Models\Assistida;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -13,40 +14,14 @@ class AssistidaController extends Controller
         return view('assistida.index_assistida', ['assistidas' => $assistidas]);
     }
 
-    // funcao para mostrar a pagina com o formulario para criar uma nova assistida
     public function formNovaAssistida(){
         return view('assistida.add_assistida');
     }
 
-    // funcao que vai fazer a validacao e submissao dos dados 
-    public function criarAssistida(Request $request){
-        $request->validate([
-            'nome' => 'required|string',
-            'idade' => 'nullable',
-            'telefone' => 'nullable|unique:assistidas',
-            'logradouro' => 'required',
-            'numero' => 'nullable',
-            'quadra' => 'nullable',
-            'bloco' => 'nullable',
-            'apartamento' => 'nullable',
-            'bairro' => 'required',
-            'complemento' => 'nullable',
-            'municipio' => 'required',
-        ]);
+    public function criarAssistida(AssistidaRequest $request){
+        $data = $request->validated();
 
-        Assistida::create([
-            'nome' => $request->nome,
-            'idade' => $request->idade,
-            'telefone' => $request->telefone,
-            'logradouro' => $request->logradouro,
-            'numero' => $request->numero, 
-            'quadra' => $request->quadra, 
-            'bloco' => $request->bloco, 
-            'apartamento' => $request->apartamento, 
-            'bairro' => $request->bairro, 
-            'complemento' => $request->complemento, 
-            'municipio' => $request->municipio, 
-        ]);
+        Assistida::create($data);
 
         return redirect()->route('listar-assistidas');
     }
@@ -71,40 +46,16 @@ class AssistidaController extends Controller
         return view('assistida.update_assistida', compact('assistida'));
     }
 
-    public function atualizarAssistida(Request $request, $id){
+    public function atualizarAssistida(AssistidaRequest $request, $id){
         $assistida = Assistida::find($id);
 
         if (!$assistida) {
             return "Ocorreu um erro ao tentar atualizar os dados. Id da assistida inválido.";
         }
 
-        $request->validate([
-            'nome' => 'required|string',
-            'idade' => 'nullable',
-            'telefone' => 'nullable|unique:assistidas',
-            'logradouro' => 'required',
-            'numero' => 'nullable',
-            'quadra' => 'nullable',
-            'bloco' => 'nullable',
-            'apartamento' => 'nullable',
-            'bairro' => 'required',
-            'complemento' => 'nullable',
-            'municipio' => 'required',
-        ]);
+        $data = $request->validated();
 
-        $assistida->update([
-            'nome' => $request->input('nome'),
-            'idade' => $request->input('idade'),
-            'telefone' => $request->input('telefone'),
-            'logradouro' => $request->input('logradouro'),
-            'numero' => $request->input('numero'),
-            'quadra' => $request->input('quadra'),
-            'bloco' => $request->input('bloco'),
-            'apartamento' => $request->input('apartamento'),
-            'bairro' => $request->input('bairro'),
-            'complemento' => $request->input('complemento'),
-            'municipio' => $request->input('municipio'),
-        ]);
+        $assistida->update($data);
 
         return redirect()->route('listar-assistidas');
     }
