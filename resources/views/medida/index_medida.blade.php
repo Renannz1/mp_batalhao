@@ -46,8 +46,8 @@
                     <td class="text-center">
                         <span class="badge 
                             @if($medida->situacao == 'Ativa') bg-success
-                            @elseif($medida->situacao == 'Revogada') bg-danger
-                            @elseif($medida->situacao == 'Pendente') bg-warning
+                            @elseif($medida->situacao == 'Finalizada') bg-secondary
+                            @elseif($medida->situacao == 'Inativa') bg-warning
                             @else bg-secondary
                             @endif">
                             {{ $medida->situacao }}
