@@ -12,7 +12,7 @@
 <div class="card mb-5">
         <div class="card-body">
 
-            <table id="datatablesSimple">
+            <table id="datatablesSimple" class="table table-bordered table-responsive text-center">
 
                 <thead>
                     <tr>
@@ -21,33 +21,16 @@
                         <th>Idade</th>
                         <th>Telefone</th>
                         <th>Logradouro</th>
-                        <th>Número</th>
-                        <th>Quadra</th>
-                        <th>Bloco</th>
-                        <th>Apartamento</th>
+                        <th>N°</th>
+                        <th>QD</th>
+                        <th>BL</th>
+                        <th>APT°</th>
                         <th>Bairro</th>
                         <th>Complemento</th>
                         <th>Munícipio</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
-                <tfoot>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome</th>
-                        <th>Idade</th>
-                        <th>Telefone</th>
-                        <th>Logradouro</th>
-                        <th>Número</th>
-                        <th>Quadra</th>
-                        <th>Bloco</th>
-                        <th>Apartamento</th>
-                        <th>Bairro</th>
-                        <th>Complemento</th>
-                        <th>Munícipio</th>
-                        <th>Ação</th>
-                    </tr>
-                </tfoot>
                 <tbody>
                     @foreach ($agressores as $agressor)
                     <tr>
@@ -64,7 +47,9 @@
                         <td>{{ $agressor->complemento }}</td>
                         <td>{{ $agressor->municipio }}</td>
                         <td>
-                            <a href="{{ route('detalhar-agressor', ['id' => $agressor->id]) }}" class="">Detalhar</a>
+                            <a href="{{ route('detalhar-agressor', ['id' => $agressor->id]) }}" class="">
+                                <i class="fas fa-eye"></i>
+                            </a>
                         </td>
                     </tr> 
                     @endforeach

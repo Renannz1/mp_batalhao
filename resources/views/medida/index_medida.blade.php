@@ -34,24 +34,6 @@
                     <th>Ação</th>
                 </tr>
             </thead>
-            <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>Processo SEI</th>
-                    <th>Medida Protetiva</th>
-                    <th>Assistida</th>
-                    <th>Situação</th>
-                    <th>Nível de Risco</th>
-                    <th>Agressor</th>
-                    <th>Relação VA</th>
-                    <th>Restrições Agressor</th>
-                    <th>Início</th>
-                    <th>Término</th>
-                    <th>Renovação</th>
-                    <th>Revogação</th>
-                    <th>Ação</th>
-                </tr>
-            </tfoot>
             <tbody>
                 @foreach ($medidas as $medida)
                 <tr>
@@ -91,7 +73,9 @@
                     <td>{{ $medida->renovacao }}</td>
                     <td>{{ $medida->revogacao }}</td>
                     <td>
-                        <a href="{{ route('detalhar-medida', ['id' => $medida->id]) }}" class="">Detalhar</a>
+                        <a href="{{ route('detalhar-medida', ['id' => $medida->id]) }}" class="">
+                            <i class="fas fa-eye"></i> 
+                        </a>
                     </td>
                 </tr> 
                 @endforeach
