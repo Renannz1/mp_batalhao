@@ -1,12 +1,14 @@
 @extends('layouts.main_layout')
 
+@section('titulo', 'Editar Medida')
+@section('sub-titulo', 'Editar Medida Protetiva')
+@section('descricao')
+    <p class="mt-0 mb-0">Formulário para editar os dados da medida protetiva.</p>
+@endsection
+
 @section('content')
 
-<div class="container mb-5 mt-4">
-    <h2 class="">Editar Medida</h2>
-    <p class="mb-5">Formulário para editar os dados da medida protevida.</p>
-
-    <div class="card ">
+    <div class="card mb-5">
         <div class="card-body">
 
             <form action="{{ route('atualizar-medida', ['id' => $medida->id]) }}" method="post">
@@ -166,6 +168,6 @@
 
         </div>
     </div>
-</div>
+
 
 @endsection

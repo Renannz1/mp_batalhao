@@ -1,12 +1,16 @@
 @extends('layouts.main_layout')
 
+@section('titulo', 'Info. Medida')
+@section('sub-titulo', 'Medida Protetiva')
+@section('descricao')
+    <p class="mt-0 mb-0">Todas as informações referentes à medida protetiva com o ID: {{$medida->id}}</p>
+@endsection
+
+
 @section('content')
 
-<div class="container mb-5 mt-4">
-  <h2>Detalhes da Medida Protetiva</h2>
-    <p class="mb-5">Listando todos os dados da medida protetiva: {{ $medida->medida_protetiva }}.</p>
 
-  <div class="card">
+  <div class="card mb-5">
     <div class="card-body">    
       <div class="card-body">
 
@@ -59,7 +63,7 @@
           <p class="mb-0"><strong> Situação </strong></p>
         </div>
         <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->situacao }}>
+          <p class=" mb-0">{{ $medida->situacao }}</p>
         </div>
       </div>
 

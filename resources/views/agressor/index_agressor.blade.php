@@ -1,17 +1,15 @@
 @extends('layouts.main_layout')
 
+@section('titulo', 'Agressores')
+@section('sub-titulo', 'Agressores')
+@section('descricao')
+    <p class="mt-0 mb-0">Todas os agressores cadastrados no sistema.</p>
+    <a href="{{ route('form-nova-assistida') }}" class="btn btn-primary mt-0 mb-0">Cadastrar Novo Agressor</a>
+@endsection
+
 @section('content')
 
-<div class="container mb-5 mt-4">
-    <div>
-        <h2>Tabela de Agressores</h2>
-        <div class="d-flex justify-content-between align-items-center">
-            <p class="mb-5">Listando todos agressores.</p>
-            <a href="{{ route('form-novo-agressor') }}" class="btn btn-primary mb-5">Cadastrar Novo Agressor</a>
-        </div>
-    </div> 
-
-    <div class="card mb-4">
+<div class="card mb-5">
         <div class="card-body">
 
             <table id="datatablesSimple">
@@ -73,7 +71,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
 </div>
 
 @endsection

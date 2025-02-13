@@ -52,7 +52,7 @@
 
                 <div class="collapse" id="collapseMedida" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('listar-medidas') }}">Todos Medidas</a>
+                        <a class="nav-link" href="{{ route('listar-medidas') }}">Todas Medidas</a>
                         <a class="nav-link" href="{{ route('form-nova-medida') }}">Cadastrar Medida</a>
                     </nav>
                 </div>

@@ -1,17 +1,16 @@
 @extends('layouts.main_layout')
 
+@section('titulo', 'Assistidas')
+@section('sub-titulo', 'Assistidas')
+@section('descricao')
+    <p class="mt-0 mb-0">Todas as assistidas cadastradas no sistema.</p>
+    <a href="{{ route('form-nova-assistida') }}" class="btn btn-primary mt-0 mb-0">Cadastrar Nova Assistida</a>
+@endsection
+
+
 @section('content')
 
-<div class="container mb-5 mt-4">
-    <div>
-        <h2>Tabela de Assistidas</h2>
-        <div class="d-flex justify-content-between align-items-center">
-            <p class="mb-5">Listando todas as mulheres com medidas protetivas.</p>
-            <a href="{{ route('form-nova-assistida') }}" class="btn btn-primary mb-5">Cadastrar Nova Assistida</a>
-        </div>
-    </div> 
-
-    <div class="card mb-4">
+<div class="card mb-5">
         <div class="card-body">
 
             <table id="datatablesSimple">
@@ -73,7 +72,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
 </div>
 
 @endsection

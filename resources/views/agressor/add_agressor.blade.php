@@ -1,12 +1,15 @@
 @extends('layouts.main_layout')
 
+@section('titulo', 'Novo Agressor')
+@section('sub-titulo', 'Novo Agressor')
+@section('descricao')
+    <p class="mt-0 mb-0">Preencha o formulário com as informações do agressor para realizar o cadastro.</p>
+@endsection
+
+
 @section('content')
 
-<div class="container mb-5 mt-4">
-    <h2 class="">Novo Agressor</h2>
-    <p class="mb-5">Formulário para cadastrar um novo agressor.</p>
-
-    <div class="card ">
+<div class="card mb-5">
         <div class="card-body">
 
             <form action="{{ route('criar-agressor') }}" method="post">
@@ -139,7 +142,6 @@
             </form>
 
         </div>
-    </div>
 </div>
 
 @endsection

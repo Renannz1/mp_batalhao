@@ -1,12 +1,14 @@
 @extends('layouts.main_layout')
 
+@section('titulo', 'Editar Assistida')
+@section('sub-titulo', 'Editar Assistida')
+@section('descricao')
+    <p class="mt-0 mb-0">Formulário para editar os dados da assistida.</p>
+@endsection
+
 @section('content')
 
-<div class="container mb-5 mt-4">
-    <h2 class="">Editar Assistida</h2>
-    <p class="mb-5">Formulário para editar os dados da assistida.</p>
-
-    <div class="card ">
+<div class="card mb-5">
         <div class="card-body">
 
             <form action="{{ route('atualizar-assistida', ['id' =>$assistida->id]) }}" method="post">
@@ -141,7 +143,6 @@
             </form>
 
         </div>
-    </div>
 </div>
 
 @endsection

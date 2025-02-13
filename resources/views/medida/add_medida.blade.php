@@ -1,12 +1,17 @@
 @extends('layouts.main_layout')
 
+@section('titulo', 'Nova Medida')
+@section('sub-titulo', 'Nova Medida Protetiva')
+@section('descricao')
+    <p class="mt-0 mb-0">Formulário para cadastrar uma nova medida protetiva.</p>
+@endsection
+
+
 @section('content')
 
-<div class="container mb-5 mt-4">
-    <h2 class="">Nova Medida Protetiva</h2>
-    <p class="mb-5">Formulário para cadastrar uma nova medida protetiva.</p>
 
-    <div class="card ">
+
+<div class="card mb-5">
         <div class="card-body">
 
             <form action="{{ route('criar-medida') }}" method="post">
@@ -163,7 +168,7 @@
             </form>
 
         </div>
-    </div>
 </div>
+
 
 @endsection

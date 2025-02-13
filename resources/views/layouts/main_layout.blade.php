@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title>MP Batalhão - @yield('titulo', '')</title>
 
         {{-- links online --}}
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
@@ -24,10 +24,20 @@
             @include('layouts.sidenav')
             
             <div id="layoutSidenav_content">
+
                 {{-- main content --}}
                 <main>
-                    <div class="container-fluid px-4">
+                    <div class="container-fluid px-5">
+                        <h1 class="mt-4 mb-4">@yield('sub-titulo', 'MP Batalhão')</h1>
+
+                        <div class="card mb-4">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                @yield('descricao')
+                            </div>
+                        </div>
+
                         @yield('content')
+
                     </div>
                 </main>
                 {{-- end main content --}}

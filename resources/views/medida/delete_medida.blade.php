@@ -1,4 +1,3 @@
-<!-- Modal de Confirmação -->
 <div class="modal fade" id="excluirModal" tabindex="-1" aria-labelledby="excluirModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -11,7 +10,6 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <!-- O link de exclusão real será inserido aqui com o id da medida -->
           <a href="{{ route('excluir-medida', ['id' => $medida->id]) }}" id="confirmarExcluir" class="btn btn-danger">Excluir</a>
         </div>
       </div>
