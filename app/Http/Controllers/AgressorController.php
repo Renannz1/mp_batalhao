@@ -30,7 +30,7 @@ class AgressorController extends Controller
         $agressor = Agressor::find($agressor_id);
 
         if (!$agressor) {
-            return "Agressor não encontrado";
+            return redirect()->route('listar-agressores')->with('error', 'Agressor não encontrado.');
         }
 
         return view('agressor.detail_agressor', compact('agressor'));
@@ -40,7 +40,7 @@ class AgressorController extends Controller
         $agressor = Agressor::find($agressor_id);
 
         if (!$agressor) {
-            return "Agressor não encontrado.";
+            return redirect()->route('listar-agressores')->with('error', 'Agressor não encontrado.');
         }
 
         return view('agressor.update_agressor', compact('agressor'));
@@ -50,7 +50,7 @@ class AgressorController extends Controller
         $agressor = Agressor::find($agressor_id);
 
         if (!$agressor) {
-            return "Agressor não encontrado.";
+            return redirect()->route('listar-agressores')->with('error', 'Agressor não encontrado.');
         }
 
         $data = $request->validated();

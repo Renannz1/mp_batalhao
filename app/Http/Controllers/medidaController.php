@@ -28,6 +28,11 @@ class medidaController extends Controller
 
     public function detalharMedida($medida_id){
         $medida = Medida::find($medida_id);
+
+        if (!$medida_id) {
+            return redirect()->route('listar-medidas')->with('error', 'Medida Protetiva não encontrada.');
+        }
+
         return view('medida.detail_medida', compact('medida'));
     }
 
@@ -35,7 +40,7 @@ class medidaController extends Controller
         $medida = Medida::find($medida_id);
 
         if (!$medida_id) {
-            return "medida não encontrada.";
+            return redirect()->route('listar-medidas')->with('error', 'Medida Protetiva não encontrada.');
         }
 
         return view('medida.update_medida', compact('medida'));
@@ -45,7 +50,7 @@ class medidaController extends Controller
         $medida = Medida::find($medida_id);
 
         if (!$medida) {
-            return "medida não encontrada.";
+            return redirect()->route('listar-medidas')->with('error', 'Medida Protetiva não encontrada.');
         }
 
         $data = $request->validated();
@@ -59,7 +64,7 @@ class medidaController extends Controller
         $medida = Medida::find($medida_id);
 
         if (!$medida_id) {
-            return 'medida não encontrada';
+            return redirect()->route('listar-medidas')->with('error', 'Medida Protetiva não encontrada.');
         }
         
         $medida->delete();

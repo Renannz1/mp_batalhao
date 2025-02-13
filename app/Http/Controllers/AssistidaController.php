@@ -31,7 +31,7 @@ class AssistidaController extends Controller
         $assistida = Assistida::find($assistida_id);
 
         if (!$assistida) {
-            return "Assistida não encontrada.";
+            return redirect()->route('listar-assistidas')->with('error', 'Assistida não encontrada.');
         }
 
         return view('assistida.detail_assistida', compact('assistida'));
@@ -41,7 +41,7 @@ class AssistidaController extends Controller
         $assistida = Assistida::find($id);
 
         if (!$assistida) {
-            return "Assistida não encontrada.";
+            return redirect()->route('listar-assistidas')->with('error', 'Assistida não encontrada.');
         }
 
         return view('assistida.update_assistida', compact('assistida'));
@@ -51,7 +51,7 @@ class AssistidaController extends Controller
         $assistida = Assistida::find($id);
 
         if (!$assistida) {
-            return "Ocorreu um erro ao tentar atualizar os dados. Id da assistida inválido.";
+            return redirect()->route('listar-assistidas')->with('error', 'Assistida não encontrada.');
         }
 
         $data = $request->validated();
