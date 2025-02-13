@@ -157,7 +157,7 @@
                 {{-- Botões de ação --}}
                 <div class="d-flex justify-content-end mt-4 gap-4">
                     <a href="{{ route('listar-medidas') }}" class="btn btn-secondary">Cancelar</a>
-                    <button type="submit" class="btn btn-primary">Criar Nova Medida</button>
+                    <button type="submit" class="btn btn-primary">Criar Medida</button>
                 </div>                 
                      
             </form>
