@@ -70,7 +70,7 @@
                             <option value="">---</option>
                             <option value="Baixo" {{ old('nivel_risco') == 'Baixo' ? 'selected' : '' }}>Baixo</option>
                             <option value="Médio" {{ old('nivel_risco') == 'Médio' ? 'selected' : '' }}>Médio</option>
-                            <option value="Inativo" {{ old('nivel_risco') == 'Inativo' ? 'selected' : '' }}>Alto</option>
+                            <option value="Alto" {{ old('nivel_risco') == 'Alto' ? 'selected' : '' }}>Alto</option>
                         </select>
                         @error('nivel_risco') 
                             <div class="text-danger mt-1">{{ $message }}</div> 
