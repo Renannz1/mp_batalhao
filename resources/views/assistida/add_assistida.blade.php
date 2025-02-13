@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container mb-5 mt-4">
-    <h2 class="">Nova Medida Protetiva</h2>
-    <p class="mb-5">Formulário para cadastrar uma nova medida protetiva.</p>
+    <h2 class="">Nova Assistida</h2>
+    <p class="mb-5">Formulário para cadastrar uma nova assistida.</p>
 
     <div class="card ">
         <div class="card-body">
