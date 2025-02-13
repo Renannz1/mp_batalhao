@@ -11,7 +11,11 @@
     <li>Municipio: {{ $assistida->municipio }}</li>
 </ul>
 
-<button><a href="{{ url()->previous() }}">Voltar</a></button>
+<div class="card-footer text-center">
+    <a href="{{ url()->previous() }}" class="btn btn-secondary me-2">Voltar</a>
+    <a href="{{ route('form-editar-assistida', ['id' => $assistida->id]) }}" class="btn btn-primary me-2">Editar</a>
+    <a href="#" class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#excluirModal" data-id="{{ $assistida->id }}">Excluir</a>
+</div>
 
 @endsection
 

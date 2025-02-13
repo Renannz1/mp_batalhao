@@ -170,7 +170,6 @@
     <div class="card-footer text-center">
         <a href="{{ url()->previous() }}" class="btn btn-secondary me-2">Voltar</a>
         <a href="{{ route('form-editar-medida', ['id' => $medida->id]) }}" class="btn btn-primary me-2">Editar</a>
-        {{-- <a href="{{ route('form-excluir-medida', ['id' => $medida->id]) }}" class="btn btn-danger me-2">Excluir</a> --}}
         <a href="#" class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#excluirModal" data-id="{{ $medida->id }}">Excluir</a>
     </div>
 

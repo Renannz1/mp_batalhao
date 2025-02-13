@@ -118,12 +118,17 @@
                 <div class="mb-3 d-flex align-items-center">
                     <label for="municipio" class="form-label me-2" style="width: 150px;">Munícipio: </label>
                     <div class="flex-grow-1">
-                        <input type="text" class="form-control" name="municipio" id="municipio" value="{{ old('municipio') }}">
+                        <select name="municipio" id="municipio" class='form-select'>
+                            <option value="">---</option>
+                            <option value="Guanambi" {{ old('municipio') == 'Guanambi' ? 'selected' : '' }}>Guanambi</option>
+                            <option value="Candiba" {{ old('municipio') == 'Candiba' ? 'selected' : '' }}>Candiba</option>
+                            <option value="Cariranha" {{ old('municipio') == 'Cariranha' ? 'selected' : '' }}>Cariranha</option>
+                        </select>
                         @error('municipio') 
                             <div class="text-danger mt-1">{{ $message }}</div> 
                         @enderror
                     </div>
-                </div>
+                </div> 
 
                 {{-- Botões de ação --}}
                 <div class="d-flex justify-content-end mt-4 gap-4">

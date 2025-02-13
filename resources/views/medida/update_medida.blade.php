@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container mb-5 mt-4">
-    <h2 class="">Nova Medida Protetiva</h2>
-    <p class="mb-5">Formulário para cadastrar uma nova medida protetiva.</p>
+    <h2 class="">Editar Medida</h2>
+    <p class="mb-5">Formulário para editar os dados da medida protevida.</p>
 
     <div class="card ">
         <div class="card-body">
@@ -67,7 +67,7 @@
                             <option value="">---</option>
                             <option value="Baixo" {{ old('nivel_risco', $medida->nivel_risco) == 'Baixo' ? 'selected' : '' }}>Baixo</option>
                             <option value="Médio" {{ old('nivel_risco', $medida->nivel_risco) == 'Médio' ? 'selected' : '' }}>Médio</option>
-                            <option value="Inativo" {{ old('nivel_risco', $medida->nivel_risco) == 'Inativo' ? 'selected' : '' }}>Alto</option>
+                            <option value="Alto" {{ old('nivel_risco', $medida->nivel_risco) == 'Alto' ? 'selected' : '' }}>Alto</option>
                         </select>
                         @error('nivel_risco') 
                             <div class="text-danger mt-1">{{ $message }}</div> 
