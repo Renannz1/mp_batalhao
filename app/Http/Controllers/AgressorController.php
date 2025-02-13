@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AgressorRequest;
 use App\Models\Agressor;
 use Illuminate\Http\Request;
 
@@ -16,34 +17,10 @@ class AgressorController extends Controller
         return view('agressor.add_agressor');
     }
 
-    public function criarAgressor(Request $request){
-        $request->validate([
-            'nome' => 'required|string',
-            'idade' => 'nullable',
-            'telefone' => 'nullable|unique:agressores',
-            'logradouro' => 'required',
-            'numero' => 'nullable',
-            'quadra' => 'nullable',
-            'bloco' => 'nullable',
-            'apartamento' => 'nullable',
-            'bairro' => 'required',
-            'complemento' => 'nullable',
-            'municipio' => 'required',
-        ]);
+    public function criarAgressor(AgressorRequest $request){
+        $data = $request->validated();
 
-        Agressor::create([
-            'nome' => $request->nome,
-            'idade' => $request->idade,
-            'telefone' => $request->telefone,
-            'logradouro' => $request->logradouro,
-            'numero' => $request->numero, 
-            'quadra' => $request->quadra, 
-            'bloco' => $request->bloco, 
-            'apartamento' => $request->apartamento, 
-            'bairro' => $request->bairro, 
-            'complemento' => $request->complemento, 
-            'municipio' => $request->municipio, 
-        ]);
+        Agressor::create($data);
 
         return redirect()->route('listar-agressores');
     }
@@ -68,40 +45,16 @@ class AgressorController extends Controller
         return view('agressor.update_agressor', compact('agressor'));
     }
 
-    public function atualizarAgressor(Request $request, $agressor_id){
+    public function atualizarAgressor(AgressorRequest $request, $agressor_id){
         $agressor = Agressor::find($agressor_id);
 
         if (!$agressor) {
             return "Agressor não encontrado.";
         }
 
-        $request->validate([
-            'nome' => 'required|string',
-            'idade' => 'nullable',
-            'telefone' => 'nullable|unique:agressores',
-            'logradouro' => 'required',
-            'numero' => 'nullable',
-            'quadra' => 'nullable',
-            'bloco' => 'nullable',
-            'apartamento' => 'nullable',
-            'bairro' => 'required',
-            'complemento' => 'nullable',
-            'municipio' => 'required',
-        ]);
+        $data = $request->validated();
 
-        $agressor->update([
-            'nome' => $request->input('nome'),
-            'idade' => $request->input('idade'),
-            'telefone' => $request->input('telefone'),
-            'logradouro' => $request->input('logradouro'),
-            'numero' => $request->input('numero'),
-            'quadra' => $request->input('quadra'),
-            'bloco' => $request->input('bloco'),
-            'apartamento' => $request->input('apartamento'),
-            'bairro' => $request->input('bairro'),
-            'complemento' => $request->input('complemento'),
-            'municipio' => $request->input('municipio'),
-        ]);
+        $agressor->update($data);
 
         return redirect()->route('listar-agressores');
     }
