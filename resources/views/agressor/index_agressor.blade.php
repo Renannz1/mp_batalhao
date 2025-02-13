@@ -10,6 +10,10 @@
 @section('content')
 
 <div class="card mb-5">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Banco de dados de Agressores
+    </div>
         <div class="card-body">
 
             <table id="datatablesSimple" class="table table-bordered table-responsive text-center">
