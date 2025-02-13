@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AssistidaRequest;
 use App\Models\Assistida;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -62,14 +63,17 @@ class AssistidaController extends Controller
 
     public function excluirAssistida($id){
         $assistida = Assistida::find($id);
-
+    
         if (!$assistida) {
-            return "Assistida não encontrada.";
+            return redirect()->route('listar-assistidas')->with('error', 'Assistida não encontrada.');
         }
-        
-        $assistida->delete();
-
-        return redirect()->route('listar-assistidas');
+    
+        try {
+            $assistida->delete();
+            return redirect()->route('listar-assistidas')->with('success', 'Assistida excluída com sucesso.');
+        } catch (QueryException $e) {
+            return redirect()->route('listar-assistidas')->with('error', 'Não é possível excluir esta assistida, pois há medidas protetivas associadas.');
+        }
     }
     
 }

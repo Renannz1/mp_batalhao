@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AgressorRequest;
 use App\Models\Agressor;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class AgressorController extends Controller
@@ -63,11 +64,14 @@ class AgressorController extends Controller
         $agressor = Agressor::find($agressor_id);
 
         if (!$agressor) {
-            return "Agressor não encontrado.";
+            return redirect()->route('listar-agressores')->with('error', 'Agressor não encontrado.');
         }
 
-        $agressor->delete();
-
-        return redirect()->route('listar-agressores');
+        try {
+            $agressor->delete();
+            return redirect()->route('listar-agressores')->with('success', 'Agressor excluído com sucesso.');
+        } catch (QueryException $e) {
+            return redirect()->route('listar-agressores')->with('error', 'Não é possível excluir este agressor, pois há medidas protetivas associadas.');
+        }
     }
 }

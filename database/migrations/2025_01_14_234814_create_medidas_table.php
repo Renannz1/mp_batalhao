@@ -28,8 +28,8 @@ return new class extends Migration
             $table->timestamps(); // Campos created_at e updated_at
 
             // Definindo as chaves estrangeiras
-            $table->foreign('assistida_id')->references('id')->on('assistidas')->onDelete('cascade');
-            $table->foreign('agressor_id')->references('id')->on('agressores')->onDelete('cascade');
+            $table->foreign('assistida_id')->references('id')->on('assistidas')->onDelete('restrict');
+            $table->foreign('agressor_id')->references('id')->on('agressores')->onDelete('restrict');
         });
     }
 
