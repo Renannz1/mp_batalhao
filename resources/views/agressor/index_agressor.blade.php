@@ -4,7 +4,7 @@
 @section('sub-titulo', 'Agressores')
 @section('descricao')
     <p class="mt-0 mb-0">Todas os agressores cadastrados no sistema.</p>
-    <a href="{{ route('form-nova-assistida') }}" class="btn btn-primary mt-0 mb-0">Cadastrar Novo Agressor</a>
+    <a href="{{ route('form-novo-agressor') }}" class="btn btn-primary mt-0 mb-0">Cadastrar Novo Agressor</a>
 @endsection
 
 @section('content')
