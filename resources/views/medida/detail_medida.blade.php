@@ -9,176 +9,80 @@
 
 @section('content')
 
-
-  <div class="card mb-5">
-    <div class="card-body">    
-      <div class="card-body">
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Id </strong></p>
+<div class="card mb-5">
+    <div class="card-body">
+        <h6 class="card-subtitle mb-3" style="text-transform: uppercase;">Informações do Processo</h6>
+        <div class="list-group mb-4">
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">ID:</strong>
+                <span>{{ $medida->id }}</span>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Processo SEI:</strong>
+                <span>{{ $medida->processo_sei }}</span>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">N° Medida:</strong>
+                <span>{{ $medida->medida_protetiva }}</span>
+            </div>
         </div>
-        <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->id }}</p>
+
+        <h6 class="card-subtitle mb-3" style="text-transform: uppercase;">Dados da Medida</h6>
+        <div class="list-group mb-4">
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Assistida:</strong>
+                <a href="{{ route('detalhar-assistida', ['id' => $medida->assistida->id]) }}" class="text-decoration-none text-dark">{{ $medida->assistida->nome }}</a>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Agressor:</strong>
+                <a href="{{ route('detalhar-agressor', ['id' => $medida->agressor->id]) }}" class="text-decoration-none text-dark">{{ $medida->agressor->nome }}</a>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Relação:</strong>
+                <span>{{ $medida->relacao_vitima_agressor }}</span>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Situação:</strong>
+                <span>{{ $medida->situacao }}</span>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Nível de risco:</strong>
+                <span>{{ $medida->nivel_risco }}</span>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Restrições:</strong>
+                <span>{{ $medida->restricoes_agressor }}</span>
+            </div>
         </div>
-      </div>
-            
-      <hr class='mb-1 mt-1'>
 
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Processo SEI </strong></p>
+        <h6 class="card-subtitle mb-3" style="text-transform: uppercase;">Prazos e Status</h6>
+        <div class="list-group">
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Início:</strong>
+                <span>{{ $medida->inicio }}</span>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Término:</strong>
+                <span>{{ $medida->previsao_termino }}</span>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Renovação:</strong>
+                <span>{{ $medida->renovacao }}</span>
+            </div>
+            <div class="list-group-item">
+                <strong class="d-inline-block" style="width: 200px">Revogação:</strong>
+                <span>{{ $medida->renovacao }}</span>
+            </div>
         </div>
-        <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->processo_sei }}</p>
-        </div>
-      </div>
-            
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-          <div class="col-sm-3">
-            <p class="mb-0"><strong> N° Medida </strong></p>
-          </div>
-          <div class="col-sm-9">
-            <p class=" mb-0">{{ $medida->medida_protetiva }}</p>
-          </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Assistida </strong></p>
-        </div>
-        <div class="col-sm-9">
-          <a href="{{ route('detalhar-assistida', ['id' => $medida->assistida->id]) }}"  class="mb-0 text-decoration-none text-dark">{{ $medida->assistida->nome }}</a>
-        </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Situação </strong></p>
-        </div>
-        <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->situacao }}</p>
-        </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Nível de risco </strong></p>
-        </div>
-        <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->nivel_risco }}</p>
-        </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Agressor </strong></p>
-        </div>
-        <div class="col-sm-9">
-          <a href="{{ route('detalhar-agressor', ['id' => $medida->agressor->id]) }}" class=" mb-0 text-decoration-none text-dark">{{ $medida->agressor->nome }}</a>
-        </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Relação </strong></p>
-        </div>
-        <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->relacao_vitima_agressor }}</p>
-        </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Restrições </strong></p>
-        </div>
-        <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->restricoes_agressor }}</p>
-        </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Situação </strong></p>
-        </div>
-        <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->situacao }}</p>
-        </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Início </strong></p>
-        </div>
-        <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->inicio }}</p>
-        </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-        <div class="col-sm-3">
-          <p class="mb-0"><strong> Término </strong></p>
-        </div>
-        <div class="col-sm-9">
-          <p class=" mb-0">{{ $medida->previsao_termino }}</p>
-        </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-          <div class="col-sm-3">
-            <p class="mb-0"><strong> Renovação </strong></p>
-          </div>
-          <div class="col-sm-9">
-            <p class=" mb-0">{{ $medida->renovacao }}</p>
-          </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      <div class="row">
-          <div class="col-sm-3">
-            <p class="mb-0"><strong> Revogação </strong></p>
-          </div>
-          <div class="col-sm-9">
-            <p class=" mb-0">{{ $medida->renovacao }}</p>
-          </div>
-      </div>
-
-      <hr class='mb-1 mt-1'>
-
-      </div>
     </div>
-
+    
     <div class="card-footer text-center">
         <a href="{{ url()->previous() }}" class="btn btn-secondary me-2">Voltar</a>
         <a href="{{ route('form-editar-medida', ['id' => $medida->id]) }}" class="btn btn-primary me-2">Editar</a>
         <a href="#" class="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#excluirModal" data-id="{{ $medida->id }}">Excluir</a>
     </div>
+</div>
 
-    @include('medida/delete_medida')
-
-  </div>
+@include('medida/delete_medida')
 
 @endsection
