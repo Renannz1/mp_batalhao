@@ -28,9 +28,9 @@ class medidaController extends Controller
             'relacao_vitima_agressor' => 'required',
             'restricoes_agressor' => 'required',
             'inicio' => 'required',
-            // 'previsao_termino' => 'nullable',
-            // 'renovacao' => 'nullable',
-            // 'revogacao' => 'nullable',
+            'previsao_termino' => 'nullable',
+            'renovacao' => 'nullable',
+            'revogacao' => 'nullable',
         ]);      
         
         Medida::create([
@@ -43,9 +43,9 @@ class medidaController extends Controller
             'relacao_vitima_agressor' => $request->relacao_vitima_agressor,
             'restricoes_agressor' => $request->restricoes_agressor,
             'inicio' => $request->inicio,
-            // 'previsao_termino' => $request->previsao_termino,
-            // 'renovacao' => $request->renovacao,
-            // 'revogacao' => $request->revogacao,
+            'previsao_termino' => $request->previsao_termino,
+            'renovacao' => $request->renovacao,
+            'revogacao' => $request->revogacao,
         ]);
 
         return redirect()->route('listar-medidas');   
@@ -83,9 +83,9 @@ class medidaController extends Controller
             'relacao_vitima_agressor' => 'required',
             'restricoes_agressor' => 'required',
             'inicio' => 'required',
-            // 'previsao_termino' => 'nullable',
-            // 'renovacao' => 'nullable',
-            // 'revogacao' => 'nullable',
+            'previsao_termino' => 'nullable',
+            'renovacao' => 'nullable',
+            'revogacao' => 'nullable',
         ]); 
         
        $medida->update([
@@ -98,9 +98,9 @@ class medidaController extends Controller
         'relacao_vitima_agressor' => $request->relacao_vitima_agressor,
         'restricoes_agressor' => $request->restricoes_agressor,
         'inicio' => $request->inicio,
-        // 'previsao_termino' => $request->previsao_termino,
-        // 'renovacao' => $request->renovacao,
-        // 'revogacao' => $request->revogacao,
+        'previsao_termino' => $request->previsao_termino,
+        'renovacao' => $request->renovacao,
+        'revogacao' => $request->revogacao,
        ]);
 
        return redirect()->route('listar-medidas');
