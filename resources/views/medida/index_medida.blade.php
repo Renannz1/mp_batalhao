@@ -28,9 +28,9 @@
                         <th>Relação VA</th>
                         <th>Restrições Agressor</th>
                         <th>Início</th>
-                        {{-- <th>Previsão Término</th>
+                        <th>Previsão Término</th>
                         <th>Renovação</th>
-                        <th>Revogação</th> --}}
+                        <th>Revogação</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -46,9 +46,9 @@
                         <th>Relação VA</th>
                         <th>Restrições Agressor</th>
                         <th>Início</th>
-                        {{-- <th>Previsão Término</th>
+                        <th>Previsão Término</th>
                         <th>Renovação</th>
-                        <th>Revogação</th> --}}
+                        <th>Revogação</th>
                         <th>Ação</th>
                     </tr>
                 </tfoot>
@@ -69,17 +69,11 @@
                         <td>{{ $medida->relacao_vitima_agressor }}</td>
                         <td>{{ $medida->restricoes_agressor }}</td>
                         <td>{{ $medida->inicio }}</td>
-                        {{-- <td>{{ $medida->previsao_termino }}</td>
+                        <td>{{ $medida->previsao_termino }}</td>
                         <td>{{ $medida->renovacao }}</td>
-                        <td>{{ $medida->revogacao }}</td> --}}
+                        <td>{{ $medida->revogacao }}</td>
                         <td>
                             <a href="{{ route('detalhar-medida', ['id' => $medida->id]) }}" class="">Detalhar</a>
-                            {{-- <button><a href="{{ route('form-editar-medida', ['id' => $medida->id]) }}">
-                                Editar Medida
-                            </a></button>
-                            <button><a href="{{ route('form-excluir-medida', ['id' => $medida->id]) }}">
-                                Excluir Medida
-                            </a></button> --}}
                         </td>
                     </tr> 
                     @endforeach

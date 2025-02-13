@@ -134,7 +134,7 @@
 
                 {{-- Botões de ação --}}
                 <div class="d-flex justify-content-end mt-4 gap-4">
-                    <a href="{{ route('listar-assistidas') }}" class="btn btn-secondary">Cancelar</a>
+                    <a href="{{ url()->previous() }}" class="btn btn-secondary me-2">Cancelar</a>
                     <button type="submit" class="btn btn-primary">Salvar Alterações</button>
                 </div>                 
                      
