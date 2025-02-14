@@ -21,9 +21,11 @@ class MedidaRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = $this->route('id');
+
         return [
-            'processo_sei' => 'required|string|max:255|unique:medidas,processo_sei',  
-            'medida_protetiva' => 'required|string|max:255|unique:medidas,medida_protetiva',  
+            'processo_sei' => 'required|string|max:255|unique:medidas,processo_sei,' . $id,  
+            'medida_protetiva' => 'required|string|max:255|unique:medidas,medida_protetiva,' . $id,  
             'assistida_id' => 'required|exists:assistidas,id',  
             'situacao' => 'required|string|max:255',  
             'nivel_risco' => 'required',  

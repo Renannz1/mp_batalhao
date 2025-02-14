@@ -21,10 +21,12 @@ class AssistidaRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = $this->route('id');
+
         return [
             'nome' => 'required|string|max:255',
             'idade' => 'nullable|integer|min:0',
-            'telefone' => 'nullable|string|unique:assistidas,telefone|max:20',
+            'telefone' => 'nullable|string|max:20|unique:assistidas,telefone,' . $id,
             'logradouro' => 'required|string|max:255',
             'numero' => 'nullable|string|max:10',
             'quadra' => 'nullable|string|max:10',
