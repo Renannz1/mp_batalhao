@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MedidaRequest;
 use App\Models\Medida;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 
 class MedidaController extends Controller
@@ -66,8 +67,12 @@ class MedidaController extends Controller
             return redirect()->route('listar-medidas')->with('error', 'Medida Protetiva não encontrada.');
         }
         
-        $medida->delete();
-
-        return redirect()->route('listar-medidas');
+        try {
+            $medida->delete();
+            return redirect()->route('listar-medidas')->with('success', 'Medida excluída com sucesso.');
+        } catch (QueryException $e) {
+            return redirect()->route('listar-medidas')->with('error', 'Ocorreu um erro ao tentar excluir a Medida.');
+        }
     }
+    
 }

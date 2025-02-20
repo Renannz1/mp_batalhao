@@ -9,6 +9,7 @@
 
 @section('content')
 
+{{-- notificação de exclusão --}}
 @if(session('error'))
     <div class="alert alert-danger mb-4">
         {{ session('error') }}
@@ -20,6 +21,8 @@
         {{ session('success') }}
     </div>
 @endif
+{{-- notificação de exclusão --}}
+
 
 <div class="card mb-5">
     <div class="card-header">

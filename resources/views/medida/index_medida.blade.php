@@ -9,6 +9,20 @@
 
 @section('content')
 
+{{-- notificação de exclusão --}}
+@if(session('error'))
+    <div class="alert alert-danger mb-4">
+        {{ session('error') }}
+    </div>
+@endif
+
+@if(session('success'))
+    <div class="alert alert-success mb-4">
+        {{ session('success') }}
+    </div>
+@endif
+{{-- notificação de exclusão --}}
+
 <div class="card mb-5">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -28,9 +42,9 @@
                     <th>Relação VA</th>
                     <th>Restrições Agressor</th>
                     <th>Início</th>
-                    <th>Término</th>
+                    {{-- <th>Término</th>
                     <th>Renovação</th>
-                    <th>Revogação</th>
+                    <th>Revogação</th> --}}
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -69,9 +83,9 @@
                     <td>{{ $medida->relacao_vitima_agressor }}</td>
                     <td>{{ $medida->restricoes_agressor }}</td>
                     <td>{{ $medida->inicio }}</td>
-                    <td>{{ $medida->previsao_termino }}</td>
+                    {{-- <td>{{ $medida->previsao_termino }}</td>
                     <td>{{ $medida->renovacao }}</td>
-                    <td>{{ $medida->revogacao }}</td>
+                    <td>{{ $medida->revogacao }}</td> --}}
                     <td>
                         <a href="{{ route('detalhar-medida', ['id' => $medida->id]) }}" class="">
                             <i class="fas fa-eye"></i> 

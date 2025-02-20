@@ -50,6 +50,7 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
 ### 🏠 Dashboard
 - Criar um sistema de autenticação para acesso ao sistema.
 - Dashboard (página inicial) do sistema com informações e resumos estátisticos.
+- Adicionar novos campos essenciais para assistidas, medidas protetivas e agressores.
 - Melhorar a funcionalidade dos filtros de busca para assistidas, agressores e medidas protetivas.
 - Gerar relatórios estatísticos sobre os dados cadastrados.
 
