@@ -22,9 +22,13 @@ class AssistidaController extends Controller
     public function criarAssistida(AssistidaRequest $request){
         $data = $request->validated();
 
-        Assistida::create($data);
 
-        return redirect()->route('listar-assistidas');
+        try {
+            Assistida::create($data);
+            return redirect()->route('listar-assistidas')->with('success', 'Assistida cadastrada com sucesso.');
+        } catch (QueryException $e) {
+            return redirect()->route('listar-assistidas')->with('error', 'Não foi possível cadastrar a assistida.');
+        }
     }
 
     public function detalharAssistida($assistida_id){
@@ -56,9 +60,12 @@ class AssistidaController extends Controller
 
         $data = $request->validated();
 
-        $assistida->update($data);
-
-        return redirect()->route('listar-assistidas');
+        try {
+            $assistida->update($data);
+            return redirect()->route('listar-assistidas')->with('success', 'Assistida atualizada com sucesso.');
+        } catch (QueryException $e) {
+            return redirect()->route('listar-assistidas')->with('error', 'Não foi possível atualizar a assistida.');
+        }
     }
 
     public function excluirAssistida($id){

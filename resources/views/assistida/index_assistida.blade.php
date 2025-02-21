@@ -10,20 +10,6 @@
 
 @section('content')
 
-{{-- notificação exclusão --}}
-@if(session('error'))
-    <div class="alert alert-danger mb-4">
-        {{ session('error') }}
-    </div>
-@endif
-
-@if(session('success'))
-    <div class="alert alert-success mb-4">
-        {{ session('success') }}
-    </div>
-@endif
-{{-- notificação exclusão --}}
-
 <div class="card mb-5">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>

@@ -21,9 +21,12 @@ class AgressorController extends Controller
     public function criarAgressor(AgressorRequest $request){
         $data = $request->validated();
 
-        Agressor::create($data);
-
-        return redirect()->route('listar-agressores');
+        try {
+            Agressor::create($data);
+            return redirect()->route('listar-agressores')->with('success', 'Agressor cadastrado com sucesso.');
+        } catch (QueryException $e) {
+            return redirect()->route('listar-agressores')->with('error', 'Não foi possível cadastrar o agressor.');
+        }
     }
 
     public function detalharAgressor($agressor_id){
@@ -55,9 +58,12 @@ class AgressorController extends Controller
 
         $data = $request->validated();
 
-        $agressor->update($data);
-
-        return redirect()->route('listar-agressores');
+        try {
+            $agressor->update($data);
+            return redirect()->route('listar-agressores')->with('success', 'Agressor atualizado com sucesso.');
+        } catch (QueryException $e) {
+            return redirect()->route('listar-agressores')->with('error', 'Não foi possível atualizar o agressor.');
+        }
     }
 
     public function excluirAgressor($agressor_id){
