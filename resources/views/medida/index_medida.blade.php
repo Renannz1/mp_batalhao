@@ -9,7 +9,7 @@
 
 @section('content')
 
-<div class="card mb-5">
+<div>
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         Banco de Dados de Medidas Protetivas

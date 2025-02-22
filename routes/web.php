@@ -6,8 +6,8 @@ use App\Http\Controllers\MedidaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function(){
-    return view('layouts.index');
-});
+    return view('dashboard');
+})->name('dashboard');
 
 Route::controller(AssistidaController::class)->group(function(){
     Route::get('/assistidas', 'listarAssistidas')->name('listar-assistidas');
