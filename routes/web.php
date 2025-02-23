@@ -2,12 +2,11 @@
 
 use App\Http\Controllers\AgressorController;
 use App\Http\Controllers\AssistidaController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MedidaController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function(){
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 Route::controller(AssistidaController::class)->group(function(){
     Route::get('/assistidas', 'listarAssistidas')->name('listar-assistidas');
