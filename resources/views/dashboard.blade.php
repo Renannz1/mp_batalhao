@@ -14,7 +14,46 @@
             
             {{-- card 1 --}}
             <div class="col-xl-3 col-md-6">
-                <div class="card text-black mb-4">
+                <div class="card text-black mb-4 border border-primary">
+                    <div class="card-body">
+                        Total de Assistidas: {{ $totalAssistidas }}
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-black stretched-link" href="#">View Details</a>
+                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- card 1 --}}
+            <div class="col-xl-3 col-md-6">
+                <div class="card text-black mb-4 border border-success">
+                    <div class="card-body">
+                        Total de Assistidas: {{ $totalAssistidas }}
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-black stretched-link" href="#">View Details</a>
+                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- card 1 --}}
+            <div class="col-xl-3 col-md-6">
+                <div class="card text-black mb-4 border border-danger">
+                    <div class="card-body">
+                        Total de Assistidas: {{ $totalAssistidas }}
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-black stretched-link" href="#">View Details</a>
+                        <div class="small text-black"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- card 1 --}}
+            <div class="col-xl-3 col-md-6">
+                <div class="card text-black mb-4 border border-warning">
                     <div class="card-body">
                         Total de Assistidas: {{ $totalAssistidas }}
                     </div>
