@@ -8,10 +8,10 @@ window.addEventListener('DOMContentLoaded', event => {
             labels: {
                 placeholder: "Buscar...",
                 perPage: "registros por página",
-                noRows: "Nenhum registro encontrado",
+                noRows: "Nenhum registro encontrado.",
                 info: "Mostrando {start} a {end} de {rows} registros",
                 noResults: "Nenhum resultado encontrado",
-                perPageSelect: ["10", "25", "50", "100"] // Opções do select
+                perPageSelect: ["10", "25", "50", "100"] 
             }
         });
     }
