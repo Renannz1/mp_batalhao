@@ -91,68 +91,45 @@
 
         </div>
         
-
-        {{-- gráficos --}}
-        <div class="row">
-
-            {{-- gráfico 1 --}}
-            <div class="col-lg-6">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <i class="fas fa-chart-bar me-1"></i>
-                                Gráfico Dinâmico
-                            </div>
-                            
-                            <div class="d-flex gap-3">
-                                {{-- Filtro para selecionar os dados do gráfico --}}
-                                <div class="mb-0">
-                                    <select id="tipoGrafico" class="form-select">
-                                        <option value="nivel_risco">Nível de Risco</option>
-                                        <option value="por_ano">Medidas por Ano</option>
-                                        <option value="por_mes">Medidas por Mês no Ano Selecionado</option>
-                                    </select>
-                                </div>
-            
-                                {{-- Filtro de Ano (só aparece quando necessário) --}}
-                                <div class="mb-0" id="filtroAnoContainer" style="display: none;">
-                                    <select id="filtroAno" class="form-select">
-                                        @foreach($anos as $ano)
-                                            <option value="{{ $ano }}">{{ $ano }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+        {{-- gráfico --}}
+        <div class="card mb-4">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <i class="fas fa-chart-bar me-1"></i>
+                        Gráfico Dinâmico
                     </div>
-                    <div class="card-body">
-                        <canvas id="GraficoDinamico" width="100%" height="50"></canvas>
+                    <div class="d-flex gap-3">
+                        <div class="mb-0">
+                            <select id="tipoGrafico" class="form-select">
+                                <option value="nivel_risco">Nível de Risco</option>
+                                <option value="situacao">Situação</option>
+                                <option value="por_ano">Ano de início</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            {{-- JSON com os dados para os gráficos --}}
-            <script id="dados-graficos" type="application/json">
-                {!! json_encode([
-                    'nivel_risco' => [
-                        'labels' => ['Baixo', 'Médio', 'Alto'],
-                        'values' => [$medidasNvBaixo, $medidasNvMedio, $medidasNvAlto]
-                    ],
-                    'por_ano' => [
-                        'labels' => array_keys($medidasPorAno),
-                        'values' => array_values($medidasPorAno)
-                    ],
-                    'por_mes' => $medidasPorMes // Estrutura: ['2024' => ['Janeiro' => 10, 'Fevereiro' => 15, ...]]
-                ]) !!}
-            </script>
-            
-            {{-- Inclui o arquivo dashboard.js --}}
-            <script src="{{ asset('js/dashboard.js') }}"></script>
-            
+            <canvas class="card-body" id="GraficoDinamico" width="100%" height="30"></canvas>
         </div>
-
-
+            
+        {{-- JSON com os dados para os gráficos --}}
+        <script id="dados-graficos" type="application/json">
+            {!! json_encode([
+                'nivel_risco' => [
+                    'labels' => ['Baixo', 'Médio', 'Alto'],
+                    'values' => [$medidasNvBaixo, $medidasNvMedio, $medidasNvAlto]
+                ],
+                'situacao' => [
+                    'labels' => ['Ativa', 'Finalizada', 'Inativa'],
+                    'values' => [$medidasAtivas, $medidasFinalizadas, $medidasInativas]
+                ],
+                'por_ano' => [
+                    'labels' => array_keys($medidasAnoInicio),
+                    'values' => array_values($medidasAnoInicio)
+                ],
+            ]) !!}
+        </script>
 
         {{-- tabela --}}
         <div class="card mb-4">
