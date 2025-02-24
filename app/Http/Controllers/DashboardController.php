@@ -11,8 +11,14 @@ class DashboardController extends Controller
 {
     public function dashboard(){
         $totalAssistidas = Assistida::count();
-
+        $assistidasGuanambi = Assistida::where('municipio', 'Guanambi')->count();
+        $assistidasCandiba = Assistida::where('municipio', 'Candiba')->count();
+        $assistidasCariranha = Assistida::where('municipio', 'Cariranha')->count();
+        
         $totalAgressores = Agressor::count();
+        $agressoresGuanambi = Agressor::where('municipio', 'Guanambi')->count();
+        $agressoresCandiba = Agressor::where('municipio', 'Candiba')->count();
+        $agressoresCariranha = Agressor::where('municipio', 'Cariranha')->count();
 
         $totalMedidas = Medida::count();
         $ultimasMedidas = Medida::orderBy('inicio', 'desc')->take(10)->get();
@@ -29,10 +35,16 @@ class DashboardController extends Controller
             ->toArray();
         
         return view('dashboard', compact(
-            'totalAssistidas', 'totalAgressores', 'totalMedidas', 'ultimasMedidas',
-            'medidasNvBaixo', 'medidasNvMedio', 'medidasNvAlto',
-            'medidasAtivas', 'medidasInativas', 'medidasFinalizadas',
-            'medidasAnoInicio',
+            'totalAssistidas',
+            'assistidasGuanambi', 'assistidasCandiba', 'assistidasCariranha',
+            
+            
+            'totalAgressores', 
+            'agressoresGuanambi', 'agressoresCandiba', 'agressoresCariranha',
+            
+            'totalMedidas', 
+            'ultimasMedidas', 'medidasNvBaixo', 'medidasNvMedio', 'medidasNvAlto',
+            'medidasAtivas', 'medidasInativas', 'medidasFinalizadas', 'medidasAnoInicio',
         ));
     }
     

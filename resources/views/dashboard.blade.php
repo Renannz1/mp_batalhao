@@ -91,6 +91,12 @@
 
         </div>
         
+
+
+
+
+
+
         {{-- gráfico --}}
         <div class="card mb-4">
             <div class="card-header">
@@ -101,11 +107,14 @@
                     </div>
                     <div class="d-flex gap-3">
                         <div class="mb-0">
-                            <select id="tipoGrafico" class="form-select">
-                                <option value="nivel_risco">Nível de Risco</option>
-                                <option value="situacao">Situação</option>
-                                <option value="por_ano">Ano de início</option>
+                            <select id="tipoTabela" class="form-select">
+                                <option value="medidas">Medidas</option>
+                                <option value="assistidas">Assistidas</option>
+                                <option value="agressores">Agressores</option>
                             </select>
+                        </div>
+                        <div class="mb-0">
+                            <select id="filtroGrafico" class="form-select"></select>
                         </div>
                     </div>
                 </div>
@@ -113,23 +122,44 @@
             <canvas class="card-body" id="GraficoDinamico" width="100%" height="30"></canvas>
         </div>
             
-        {{-- JSON com os dados para os gráficos --}}
         <script id="dados-graficos" type="application/json">
             {!! json_encode([
-                'nivel_risco' => [
-                    'labels' => ['Baixo', 'Médio', 'Alto'],
-                    'values' => [$medidasNvBaixo, $medidasNvMedio, $medidasNvAlto]
+                'medidas' => [
+                    'nivel_risco' => [
+                        'labels' => ['Baixo', 'Médio', 'Alto'],
+                        'values' => [$medidasNvBaixo, $medidasNvMedio, $medidasNvAlto]
+                    ],
+                    'situacao' => [
+                        'labels' => ['Ativa', 'Finalizada', 'Inativa'],
+                        'values' => [$medidasAtivas, $medidasFinalizadas, $medidasInativas]
+                    ],
+                    'por_ano' => [
+                        'labels' => array_keys($medidasAnoInicio),
+                        'values' => array_values($medidasAnoInicio)
+                    ],
                 ],
-                'situacao' => [
-                    'labels' => ['Ativa', 'Finalizada', 'Inativa'],
-                    'values' => [$medidasAtivas, $medidasFinalizadas, $medidasInativas]
+                'assistidas' => [
+                    'municipio' => [
+                        'labels' => ['Guanambi', 'Candiba', 'Cariranha'],
+                        'values' => [$assistidasGuanambi, $assistidasCandiba, $assistidasCariranha]
+                    ]
                 ],
-                'por_ano' => [
-                    'labels' => array_keys($medidasAnoInicio),
-                    'values' => array_values($medidasAnoInicio)
-                ],
+                'agressores' => [
+                    'municipio' => [
+                        'labels' => ['Guanambi', 'Candiba', 'Cariranha'],
+                        'values' => [$agressoresGuanambi, $agressoresCandiba, $agressoresCariranha]
+                    ]
+                ]
             ]) !!}
         </script>
+
+
+
+
+
+
+
+
 
         {{-- tabela --}}
         <div class="card mb-4">
