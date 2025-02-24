@@ -55,7 +55,7 @@
                             <option value="">---</option>
                             <option value="Ativa" {{ old('situacao') == 'Ativa' ? 'selected' : '' }}>Ativa</option>
                             <option value="Finalizada" {{ old('situacao') == 'Finalizada' ? 'selected' : '' }}>Finalizada</option>
-                            <option value="Inativa" {{ old('situacao') == 'Inativa' ? 'selected' : '' }}>Inativa</option>
+                            <option value="Renovada" {{ old('situacao') == 'Renovada' ? 'selected' : '' }}>Renovada</option>
                         </select>
                         @error('situacao') 
                             <div class="text-danger mt-1">{{ $message }}</div> 

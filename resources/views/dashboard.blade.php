@@ -106,8 +106,8 @@
                         'values' => [$medidasNvBaixo, $medidasNvMedio, $medidasNvAlto]
                     ],
                     'situacao' => [
-                        'labels' => ['Ativa', 'Finalizada', 'Inativa'],
-                        'values' => [$medidasAtivas, $medidasFinalizadas, $medidasInativas]
+                        'labels' => ['Ativa', 'Finalizada', 'Renovada'],
+                        'values' => [$medidasAtivas, $medidasFinalizadas, $medidasRenovadas]
                     ],
                     'por_ano' => [
                         'labels' => array_keys($medidasAnoInicio),
@@ -170,7 +170,7 @@
                                 <span class="badge 
                                     @if($medida->situacao == 'Ativa') bg-success
                                     @elseif($medida->situacao == 'Finalizada') bg-secondary
-                                    @elseif($medida->situacao == 'Inativa') bg-warning
+                                    @elseif($medida->situacao == 'Renovada') bg-primary
                                     @else bg-secondary
                                     @endif">
                                     {{ $medida->situacao }}

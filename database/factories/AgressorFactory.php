@@ -29,7 +29,7 @@ class AgressorFactory extends Factory
             'apartamento' => null,
             'bairro' => $faker->citySuffix,
             'complemento' => $faker->secondaryAddress,
-            'municipio' => $faker->city,
+            'municipio' => $faker->randomElement(['Guanambi', 'Cariranha', 'Candiba']),
         ];
     }
 }

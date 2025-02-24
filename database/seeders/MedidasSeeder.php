@@ -13,6 +13,6 @@ class MedidasSeeder extends Seeder
      */
     public function run(): void
     {
-        Medida::factory()->count(10)->create();
+        Medida::factory()->count(100)->create();
     }
 }

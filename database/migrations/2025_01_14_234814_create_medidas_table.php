@@ -26,7 +26,8 @@ return new class extends Migration
             $table->date('renovacao')->nullable(); // Data de renovação da medida protetiva (opcional)
             $table->date('revogacao')->nullable(); // Data de revogação, se aplicável (opcional)
             $table->timestamps(); // Campos created_at e updated_at
-
+            $table->softDeletes();
+            
             // Definindo as chaves estrangeiras
             $table->foreign('assistida_id')->references('id')->on('assistidas')->onDelete('restrict');
             $table->foreign('agressor_id')->references('id')->on('agressores')->onDelete('restrict');

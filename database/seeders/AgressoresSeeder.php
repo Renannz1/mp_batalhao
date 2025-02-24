@@ -14,6 +14,6 @@ class AgressoresSeeder extends Seeder
      */
     public function run(): void
     {
-        Agressor::factory()->count(10)->create();
+        Agressor::factory()->count(100)->create();
     }
 }

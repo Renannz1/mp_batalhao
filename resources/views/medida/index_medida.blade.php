@@ -47,7 +47,7 @@
                         <span class="badge 
                             @if($medida->situacao == 'Ativa') bg-success
                             @elseif($medida->situacao == 'Finalizada') bg-secondary
-                            @elseif($medida->situacao == 'Inativa') bg-warning
+                            @elseif($medida->situacao == 'Renovada') bg-primary
                             @else bg-secondary
                             @endif">
                             {{ $medida->situacao }}

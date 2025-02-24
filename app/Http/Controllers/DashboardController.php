@@ -26,7 +26,7 @@ class DashboardController extends Controller
         $medidasNvMedio = Medida::where('nivel_risco', 'Médio')->count();
         $medidasNvAlto = Medida::where('nivel_risco', 'Alto')->count();
         $medidasAtivas = Medida::where('situacao', 'Ativa')->count();
-        $medidasInativas = Medida::where('situacao', 'Inativa')->count();
+        $medidasRenovadas = Medida::where('situacao', 'Renovada')->count();
         $medidasFinalizadas = Medida::where('situacao', 'Finalizada')->count();
         $medidasAnoInicio = Medida::selectRaw('YEAR(inicio) as ano, COUNT(*) as total')
             ->groupBy('ano')
@@ -44,7 +44,7 @@ class DashboardController extends Controller
             
             'totalMedidas', 
             'ultimasMedidas', 'medidasNvBaixo', 'medidasNvMedio', 'medidasNvAlto',
-            'medidasAtivas', 'medidasInativas', 'medidasFinalizadas', 'medidasAnoInicio',
+            'medidasAtivas', 'medidasRenovadas', 'medidasFinalizadas', 'medidasAnoInicio',
         ));
     }
     
