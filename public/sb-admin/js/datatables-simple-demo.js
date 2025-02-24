@@ -11,8 +11,9 @@ window.addEventListener('DOMContentLoaded', event => {
                 noRows: "Nenhum registro encontrado.",
                 info: "Mostrando {start} a {end} de {rows} registros",
                 noResults: "Nenhum resultado encontrado",
-                perPageSelect: ["10", "25", "50", "100"] 
+                perPageSelect: ["10", "25", "50", "100"]
+                 
             }
-        });
+        }); 
     }
 });

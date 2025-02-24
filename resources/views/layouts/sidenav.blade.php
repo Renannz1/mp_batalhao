@@ -7,7 +7,7 @@
                 <div class="sb-sidenav-menu-heading">INÍCIO</div>
 
                 <a class="nav-link" href="{{ route('dashboard') }}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="sb-nav-link-icon "><i class="fas fa-chart-line"></i></div>
                     Tela Principal
                 </a>
 
@@ -17,7 +17,7 @@
 
                 {{-- assistidas --}}
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAssistida" aria-expanded="false" aria-controls="collapseAssistida">
-                    <div class="sb-nav-link-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="sb-nav-link-icon text-primary"><i class="fas fa-user-shield"></i></div>
                     Assistida
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -31,7 +31,7 @@
 
                 {{-- agressores --}}
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAgressor" aria-expanded="false" aria-controls="collapseAgressor">
-                    <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    <div class="sb-nav-link-icon text-danger"><i class="fas fa-user"></i></div>
                     Agressores
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -45,7 +45,7 @@
 
                 {{-- medidas --}}
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMedida" aria-expanded="false" aria-controls="collapseMedida">
-                    <div class="sb-nav-link-icon"><i class="fas fa-shield"></i></div>
+                    <div class="sb-nav-link-icon text-success"><i class="fas fa-shield"></i></div>
                     Medidas
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -58,12 +58,5 @@
                 </div>
             </div>
         </div>
-
-        {{-- footer slide nav --}}
-        {{-- <div class="sb-sidenav-footer">
-            <div class="small">Logged in as:</div>
-            Start Bootstrap
-        </div> --}}
-        {{-- end footer slide nav --}}
     </nav>
 </div>

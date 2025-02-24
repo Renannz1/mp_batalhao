@@ -74,7 +74,7 @@
                     <td>{{ $medida->revogacao }}</td> --}}
                     <td>
                         <a href="{{ route('detalhar-medida', ['id' => $medida->id]) }}" class="">
-                            <i class="fas fa-eye"></i> 
+                            <i class="fas fa-eye text-secondary"></i> 
                         </a>
                     </td>
                 </tr> 

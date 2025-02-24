@@ -63,8 +63,6 @@
         <script src="/sb-admin/js/datatables-simple-demo.js"></script>
         <script src="/sb-admin/js/scripts.js"></script>
         <script src="/js/dashboard.js"></script>
-        <script src="{{ asset('js/dashboard.js') }}"></script>
-
         
         {{-- Alerta Dinâmico com SweetAlert2 --}}
         @include('layouts.alerta_dinamico')
