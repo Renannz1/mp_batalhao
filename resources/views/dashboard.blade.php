@@ -1,4 +1,4 @@
-@extends('layouts.main_layout')
+@extends('layouts.main_layout_dashboard')
 
 @section('titulo', 'Página Inicial')
 @section('sub-titulo', 'Dashboard')
@@ -10,11 +10,12 @@
 
 <main>
     <div class="card-5">
+
         {{-- cards --}}
-        <div class="row">
+        <div class="row justify-content-between">
             
             {{-- card 1 --}}
-            <div class="col-6 col-lg-3 col-md-6 mb-4">
+            <div class="col-6 col-lg-4 col-md-6 mb-4">
                 <div class="card border border-primary">
                     <div class="card-body p-4">
                         <div class="row">
@@ -33,12 +34,12 @@
             </div>
 
             {{-- card 2 --}}
-            <div class="col-6 col-lg-3 col-md-6">
-                <div class="card border border-primary">
+            <div class="col-6 col-lg-4 col-md-6 mb-4">
+                <div class="card border border-danger">
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="bg-primary rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <div class="bg-danger rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
                                     <i class="fas fa-user text-white"></i>
                                 </div>
                             </div>
@@ -52,12 +53,12 @@
             </div>
 
             {{-- card 3 --}}
-            <div class="col-6 col-lg-3 col-md-6">
-                <div class="card border border-primary">
+            <div class="col-6 col-lg-4 col-md-6 mb-4">
+                <div class="card border border-success">
                     <div class="card-body p-4">
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="bg-primary rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                <div class="bg-success rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
                                     <i class="fas fa-shield text-white"></i>
                                 </div>
                             </div>
@@ -70,33 +71,8 @@
                 </div>
             </div>
 
-            {{-- card 4 --}}
-            <div class="col-6 col-lg-3 col-md-6">
-                <div class="card border border-primary">
-                    <div class="card-body p-4">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="bg-primary rounded d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                    <i class="text-white">?</i>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <h6 class="text-muted fw-semibold">Em produção</h6>
-                                <h6 class="fw-bold mb-0">???</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
         
-
-
-
-
-
-
         {{-- gráfico --}}
         <div class="card mb-4">
             <div class="card-header">
@@ -152,14 +128,6 @@
                 ]
             ]) !!}
         </script>
-
-
-
-
-
-
-
-
 
         {{-- tabela --}}
         <div class="card mb-4">
