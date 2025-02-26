@@ -19,12 +19,10 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
 - Exibição de detalhes da medida protetiva.
 
 ### 📊 Dashboard
+- Visão geral do sistema com estatísticas sobre as entidades.
+- Gráficos dinâmicos para análise de dados.
+- Listagem das últimas medidas protetivas cadastradas.
 
-Visão geral do sistema com estatísticas sobre assistidas, agressores e medidas protetivas.
-
-Gráficos dinâmicos para análise de dados.
-
-Listagem das últimas medidas protetivas cadastradas.
 ### 🔄 Relacionamentos das tabelas
 - **Assistida → Medida Protetiva** (Uma assistida pode ter várias medidas protetivas).
 - **Agressor → Medida Protetiva** (Um agressor pode ter várias medidas protetivas).
