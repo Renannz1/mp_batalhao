@@ -18,6 +18,13 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
 - Relação com assistida e agressor.
 - Exibição de detalhes da medida protetiva.
 
+### 📊 Dashboard
+
+Visão geral do sistema com estatísticas sobre assistidas, agressores e medidas protetivas.
+
+Gráficos dinâmicos para análise de dados.
+
+Listagem das últimas medidas protetivas cadastradas.
 ### 🔄 Relacionamentos das tabelas
 - **Assistida → Medida Protetiva** (Uma assistida pode ter várias medidas protetivas).
 - **Agressor → Medida Protetiva** (Um agressor pode ter várias medidas protetivas).
@@ -28,6 +35,7 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
 
 ## 🚀 Tecnologias Utilizadas
 - **Laravel** (Framework PHP para backend)
+- **JavaScript**  (Chart.js - Gráficos dinâmicos para visualização dos dados)
 - **Bootstrap 5** (Framework CSS para estilização)
 - **Blade** (Template Engine do Laravel)
 - **Eloquent ORM** (Mapeamento de banco de dados)
@@ -42,6 +50,7 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
  ├── assistidas (Views de Assistidas)
  ├── agressores (Views de Agressores)
  ├── medidas (Views de Medidas Protetivas)
+ ├── dashboard (View da página inicial)
 📁 database/migrations (Migrações do banco de dados)
 📁 database/factories (Factories para geração de dados fictícios)
 ```
@@ -49,7 +58,6 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
 ## 📌 Próximos Passos
 ### 🏠 Dashboard
 - Criar um sistema de autenticação para acesso ao sistema.
-- Dashboard (página inicial) do sistema com informações e resumos estátisticos.
 - Adicionar novos campos essenciais para assistidas, medidas protetivas e agressores.
 - Melhorar a funcionalidade dos filtros de busca para assistidas, agressores e medidas protetivas.
 - Gerar relatórios estatísticos sobre os dados cadastrados.
