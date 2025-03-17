@@ -8,7 +8,7 @@
 
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <div class="sb-nav-link-icon "><i class="fas fa-chart-line"></i></div>
-                    Tela Principal
+                    Painel de Controle
                 </a>
 
 

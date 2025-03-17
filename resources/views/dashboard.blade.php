@@ -1,7 +1,7 @@
 @extends('layouts.main_layout_dashboard')
 
-@section('titulo', 'Página Inicial')
-@section('sub-titulo', 'Dashboard')
+@section('titulo', 'Painel')
+@section('sub-titulo', 'Painel de Controle')
 @section('descricao')
     <p class="mt-0 mb-0">Informações gerais do sistema.</p>
 @endsection
