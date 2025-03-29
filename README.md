@@ -39,10 +39,11 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
 - **Eloquent ORM** (Mapeamento de banco de dados)
 
 ## 📂 Estrutura do Projeto
-```
+
 📁 app
  ├── Models (Modelos das entidades: Assistida, Agressor, Medida)
  ├── Http/Controllers (Controladores das entidades)
+ ├── Http/Requests (Regras de validação dos formulários de: Assistida, Agressor, Medida)
 📁 resources/views
  ├── layouts (Layouts base do sistema)
  ├── assistidas (Views de Assistidas)
@@ -51,12 +52,21 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
  ├── dashboard (View da página inicial)
 📁 database/migrations (Migrações do banco de dados)
 📁 database/factories (Factories para geração de dados fictícios)
-```
+
 
 ## 📌 Próximos Passos
+### 🏠 Dashboard
 - Criar um sistema de autenticação para acesso ao sistema.
 - Adicionar novos campos essenciais para assistidas, medidas protetivas e agressores.
 - Melhorar a funcionalidade dos filtros de busca para assistidas, agressores e medidas protetivas.
+- Gerar relatórios para conversar com outros órgãos (Relatório sobre as visistas de uma assistida ou sobre a assistida). 
+- Alterar processo SEI. (Várias medidas por processo SEI)
+- Tabela para visitas
+- Possibilidade de cadastrar nova visita para várias medidas para uma mesma mulher (Incluir campos de seleção na tabela de medidas para realizar ação).
+- Possibilidade para importar dados de planilhas.
+- Datas formulario medida 
+ - - Inicio medida
+ - - Inicio Recebimento (quando chegar no email)
   
 ---
 📌 **Status do Projeto**: Em desenvolvimento 🛠️
