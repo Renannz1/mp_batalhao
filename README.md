@@ -39,7 +39,7 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
 - **Eloquent ORM** (Mapeamento de banco de dados)
 
 ## 📂 Estrutura do Projeto
-
+```
 📁 app
  ├── Models (Modelos das entidades: Assistida, Agressor, Medida)
  ├── Http/Controllers (Controladores das entidades)
@@ -52,10 +52,9 @@ Este sistema foi desenvolvido para auxiliar o 17° Batalhão da Polícia Militar
  ├── dashboard (View da página inicial)
 📁 database/migrations (Migrações do banco de dados)
 📁 database/factories (Factories para geração de dados fictícios)
-
+```
 
 ## 📌 Próximos Passos
-### 🏠 Dashboard
 - Criar um sistema de autenticação para acesso ao sistema.
 - Adicionar novos campos essenciais para assistidas, medidas protetivas e agressores.
 - Melhorar a funcionalidade dos filtros de busca para assistidas, agressores e medidas protetivas.
